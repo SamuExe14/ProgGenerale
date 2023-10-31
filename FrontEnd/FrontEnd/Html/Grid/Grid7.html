@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: darkslategrey;
+        }
+
+        .griglia {
+            display: grid;
+            gap: 10px;
+            grid-template-areas: "header"
+                "sidebar"
+                "content"
+                "sidebar2"
+                "footer";
+            background-color: darkslategrey;
+
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .sidebar2 {
+            grid-area: sidebar2;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .box {
+            background-color: beige;
+            border: 5px;
+            padding: 5px;
+        }
+
+        @media only screen and (min-width: 500px) {
+
+            .griglia {
+                grid-template-columns: 20% auto;
+                grid-template-areas: "header header"
+                    "sidebar content"
+                    "sidebar2 sidebar2"
+                    "footer footer";
+            }
+        }
+
+        @media only screen and (min-width: 700px) {
+
+            .griglia {
+                grid-template-columns: 150px auto 90px;
+                grid-area: "header header"
+                    "sidebar content sidebar2"
+                    "footer footer footer";
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="griglia">
+        <div class="box header">Header</div>
+        <div class="box sidebar">Sidebar</div>
+        <div class="box sidebar2">Sidebar 2</div>
+        <div class="box content">Contenuti </div>
+        <div class="box footer">Piede della pagina</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let secondi_Inseriti = prompt("Inserire quantità di secondi desiderati per sapere le ore:")
+        var ora = 3600;
+        var minuto = 60;
+        var secondo = 60;
+
+
+        var oreRisu;
+        oreRisu = secondi_Inseriti / ora
+
+        var minRisu;
+        minRisu = Math.floor((secondi_Inseriti % ora) / minuto)
+
+        var secRisu;
+        secRisu = ((secondi_Inseriti % ora) % minuto)
+
+
+        // console.log(secondi_Inseriti,"sono equivalenti a", Math.floor(oreRisu),"ore,")
+        // console.log(Math.floor(minRisu),"minuti")
+        // console.log(secRisu)
+
+        console.log(secondi_Inseriti, "sono equivalenti a:", Math.floor(oreRisu), "ore", Math.floor(minRisu), "minuti e", secRisu, "secondi.")
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+<!-- // for (var iterator of object) {
+
+        //     console.log(object);
+
+        // } -->

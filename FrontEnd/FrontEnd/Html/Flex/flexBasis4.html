@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .padre {
+            display: flex;
+            border: 2px soldi black;
+            background-color: brown;
+            justify-content: flex-start;
+        }
+
+        .figli {
+            background-color: darkkhaki;
+            color: white;
+            margin: 0px 5px;
+            font: 1.5em;
+        }
+
+        .figlioGrowVero {
+            flex: 1 1 auto;
+        }
+
+        .figlioParticolare {
+            flex-grow: 2;
+            background-color: green;
+        }
+
+        .filio1000 {
+            flex-shrink: 0;
+            flex-basis: 1000px;
+
+        }
+
+        .wrap {
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="padre">
+        <div contentdiatable class="figli">primo</div>
+        <div contentdiatable class="figli">secondo Lorem ipsum dolor sit amet.</div>
+        <div contentdiatable class="figli">terzo</div>
+    </div>
+    <br>
+
+    <div class="padre">
+
+        <div class="figli figlioGrowVero">
+            testo
+        </div>
+        <div class="figli figlioGrowVero">
+            testo
+        </div>
+        <div class="figli figlioGrowVero">
+            testo
+        </div>
+
+    </div>
+    <br>
+
+    <div class="padre">
+
+        <div class="figli figlioGrowVero">
+            testo
+        </div>
+        <div class="figli figlioParticolare">
+            testo
+        </div>
+        <div class="figli figlioGrowVero">
+            testo
+        </div>
+    </div>
+
+    <br>
+
+    <div class="padre wrap">
+        <div class="figli">testo</div>
+        <div class="figli">testo</div>
+        <div class="figli filio1000">testo</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <style>
+        ul {
+            display: flex;
+            list-style: none;
+
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            background-color: darkgoldenrod;
+            border: 1px solid darkblue;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        div {
+            width: 70%;
+            border: 2px solid darkgoldenrod;
+            /* flex-direction: column; */
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        img {
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        .nowrap{
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, explicabo!</p>
+        <img src="../images/flex-axis.png" alt="">
+        <img src="../images/bell-pepper.png" alt="">
+        <img src="../images/carrot.png" alt="">
+        <img src="../images/eggplant.png" alt="">
+        <img src="../images/lemon.png" alt="">
+        <img src="../images/orange.png" alt="">
+        <img src="../images/peach.png" alt="">
+        <img src="../images/potato.png" alt="">
+        <img src="../images/strawberry.png" alt="">
+        <img src="../images/tomato.png" alt="">
+        <img src="../images/watermelon.png" alt="">
+        
+    </div>
+
+    <div class="nowrap">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odit inventore, id aliquid laborum tempore voluptas quaerat blanditiis molestias. Porro sed aliquam maxime ullam blanditiis voluptas eius placeat quos corporis.</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .griglia {
+            display: grid;
+            grid-template-columns: min-content min-content min-content;
+            grid-template-areas: " . header header"
+                "sidebar content content"
+                "footer footer footer";
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid blue;
+            border-radius: 5px;
+            color: blue;
+            padding: 10px;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #999;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="griglia">
+        <div class="box header">Header</div>
+        <div class="box sidebar">Sidebar</div>
+        <div class="box content">Content
+            More content thafasfafasfasfasfafafasffsdfsdfsdfsdn we had before so this column is now quite tall.</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+
+</html>

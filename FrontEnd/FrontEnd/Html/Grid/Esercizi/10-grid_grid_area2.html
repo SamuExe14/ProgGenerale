@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 40px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        /* Se aggiungo un footer al mio markup e definisco a grid-area e lo posiziono sulla griglia
+         usando grid-template-areas puoi vedere che si trova sotto la colonna del contenuto. 
+         Non è richiesta alcuna cancellazione poiché questo piè di pagina ha una traccia sulla griglia, 
+         non può saltare su un'altra traccia.
+        Questo esempio mostra anche il problema descritto nell'esempio 5, per impostazione predefinita 
+        lo sfondo sulla barra laterale dovrebbe estendersi a tutta altezza, in modo simile alle impostazioni 
+        predefinite dei flexbox. */
+        .footer {
+            grid-area: footer;
+        }
+
+
+        .wrapper {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 150px 150px 150px;
+            grid-template-areas:
+                "....... header header"
+                "sidebar content content"
+                "footer  footer  footer";
+            background-color: #fff;
+            color: #444;
+        }
+
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid blue;
+            color:blue;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 150%;
+        }
+
+        .header,
+        .footer {
+            background-color: #999;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <img src="images/gridlines.png" alt="">
+    <div class="wrapper">
+        <div class="box header">Header</div>
+        <div class="box sidebar">Sidebar</div>
+        <div class="box content">Content
+            <br /> More content thafasfafasfasfasfafafasffsdfsdfsdfsdn we had before so this column is now quite tall.
+        </div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+
+</html>

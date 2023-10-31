@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-4">
+            <h3>Un form</h3>
+
+            <form action="#" method="post" enctype="">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <div class="mb-3">
+                    <label for="privacy" class="form-label">Consenso dati</label>
+                    <input type="checkbox" class="form-check-input"" id=" privacy" checked>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Invio</button>
+            </form>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <select name="città" id="" class="form-select text-start" style="background-color: aqua; ">
+                    <option value="">Inserisci la tua città</option>
+                    <option value="roma">Roma</option>
+                    <option value="Catania">Catania</option>
+                    <option value="Napoli">Napoli</option>
+                </select>
+
+            </div>
+            <div class="col mb-3">
+                <select name="città" multiple id="" ">
+                    <option value="" >Inserisci la tua città</option>
+                    <option value=" roma">Roma</option>
+                    <option value="Catania">Catania</option>
+                    <option value="Napoli">Napoli</option>
+                </select>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <span for="email" class="input-group-text bg-body-secondary" id="email">Email</span>
+                    <input type="mail" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-body-secondary">Password</span>
+                        <input type="password" class="form-control bg" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="mail" class="form-control">
+                        <span class="input-group-text ">@gmail.com</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="range" class="form-label">Piccolo range da usare</label>
+                    <input type="range" class="form-range" id="range" min="0" max="5" step="1">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

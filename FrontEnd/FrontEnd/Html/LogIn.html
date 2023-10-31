@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <style>
+        body {
+            background-color: rgba(79, 226, 207, 0.692);
+        }
+
+        .page {
+            padding-top: 200px;
+            padding-left: 500px;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.671);
+            width: 400px;
+            height: 500px;
+            /* margin-left: 40%;
+            margin-top: 30%; */
+
+            border-radius: 50px;
+            border: 3px solid white;
+        }
+
+        .card h1 {
+            color: whitesmoke;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .signUp label {
+            margin-left: 150px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+        .signUp form {
+            margin-top: -30px;
+        }
+
+        .signUp {
+            margin-top: 100px;
+            color: white;
+            font-size: 1.4em;
+        }
+
+        .signUp input {
+            border-radius: 7px;
+            width: 300px;
+            height: 30px;
+            margin-left: 30px;
+        }
+
+        .signUp p > a {
+            color: white;
+            margin-left: 34px;
+            margin-top: -10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .signUp a:hover {
+            text-decoration: underline;
+            color: hotpink;
+        }
+
+        .button {
+            background-color: white;
+            font-size: 19px;
+            margin-left: 150px;
+            margin-top: 20px;
+            width: 100px;
+            height: 30px;
+            border-radius: 40px;
+            border: 0px solid;
+        }
+
+        .button:hover {
+            background-color: cadetblue;
+            text-decoration: underline;
+        }
+
+        /* @media screen and (max-width: 600px) {
+            .page {
+                padding-left: 200px;
+                
+            }
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="card">
+            <h1>Log In</h1>
+            <div class="signUp">
+                <form action="">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <label for="Password">Password</label>
+                    <input type="Password" id="Password" placeholder="Password" required>
+                    <p><a href="">Username dimenticato?</a></p>
+                    <p><a href="">Password dimenticata?</a></p>
+                    <button class="button">Submit</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

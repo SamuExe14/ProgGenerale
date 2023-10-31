@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="myStyle.css">
+    <title>Page Title</title>
+</head>
+
+<body>
+    <div id="lista">Non siamo ancora attivi</div>
+    <button id="simpleButton" onclick="showUsers();">Click me to show users.json</button>
+    <button id="simpleButton" onclick="showArray();">Click me to show usersArray.json </button>
+    <div id="spin" class="over"></div>
+
+    <script>
+        function showUsers() {
+            // aggiungo lo spinner
+            // spin.className = "loader"
+            // meglio se uso un toggle su classList
+            spin.classList.toggle("loader")
+            let request = new XMLHttpRequest();
+
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    let myResponse = JSON.parse(request.responseText)
+                    console.log("myResponse = ", myResponse);
+                    console.log("myResponse.users = ", myResponse.users);
+                    //const users = myResponse["users"] // occhio qui, devo prendere l'array che si trova dentro la chiave users
+                    const users = myResponse.users
+                    let mostra = '';
+                    for (let i = 0; i < users.length; i++) {
+                        console.log(i);
+                        mostra += `<li> ${users[i].name}, ${users[i].email} </li > `;
+                        console.log("mostra = " + mostra);
+                    }
+                    //elimino la clase dello spinner
+                    //spin.className = ""
+                    //meglio se uso un toggle su classList
+                    spin.classList.toggle("loader")
+
+                    //document.getElementById('lista').innerHTML = mostra
+                    lista.innerHTML = mostra
+
+                } else if (request.readyState == 4 && request.status == 404) {
+                    alert("Ops ... qualcosa  è' anadato storto")
+                }
+            }
+            request.open("GET", "users.json", true)
+            request.send();
+        }
+
+
+
+        function showArray() {
+            let request = new XMLHttpRequest();
+            spin.classList.toggle("loader")
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    // Occhio qui, l’array è già la risposta diversante da prima che dovevo accedere al
+                    // contenuto relativo alla chiave di “users”
+                    let myResponseArray = JSON.parse(request.responseText)
+
+                    console.log(myResponseArray);
+                    console.log(myResponseArray.length);
+                    let mostra = '';
+                    for (let i = 0; i < myResponseArray.length; i++) {
+                        console.log(i);
+                        mostra += `<li> ${myResponseArray[i].name} </li>`;
+                        console.log("mostra = " + mostra);
+                    }
+
+                    setTimeout(() => {
+                        console.log('setTimeout')
+                        spin.classList.toggle("loader")
+                        document.getElementById('lista').innerHTML = mostra
+                    }, 2000)
+
+
+                } else if (request.readyState == 4 && request.status == 404) {
+                    alert("Ops ... qualcosa  è' anadato storto")
+                }
+            }
+            //request.open("GET", "users_array.json", true)
+            request.open("GET", "https://jsonplaceholder.typicode.com/users", true)
+
+            request.send();
+
+        }
+    </script>
+</body>
+
+</html>

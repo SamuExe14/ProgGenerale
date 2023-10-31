@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        div {
+            display: flex;
+            width: 100%;
+            height: 128px;
+        }
+
+        .limone {
+            flex: 0 1 300px;
+        }
+
+        .testo {
+            border: 1px solid;
+            padding: 10px;
+            flex: 1 0 300px;
+        }
+
+        p {
+            border: 2px solid salmon;
+            background-color: blanchedalmond;
+
+        }
+
+        p:nth-child(1) {
+            flex: 2 1 0; /*rapposto 2 / 3   -   1 / 3*/
+        }
+
+        p:nth-child(2) {
+            flex: 1 1 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="limone" src="./images/lemon.png" alt="">
+        <p class="testo">testo con classe separata e valori flex persona</p>
+        <img src="./images/potato.png" alt="">
+        <img src="./images/orange.png" alt="">
+    </div>
+   
+    <div>
+        <p>primo</p>
+        <p>seconda</p>
+    </div>
+</body>
+</html>

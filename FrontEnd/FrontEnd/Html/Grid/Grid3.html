@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .griglia {
+            display: grid;
+            grid-template-columns: [colonna1] 100px [colonna2] 100px [colonna3] 100px [colonna_finale] 100px;
+            grid-template-rows: [riga1] auto [riga2] auto [riga_finale] ;
+
+        } 
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+
+        .a { 
+            grid-column: colonna1 / colonna_finale;
+            grid-row: riga1;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="griglia ">
+        <div class="box a">Orcodio</div>
+        <div class="box b">Orcodio</div>
+        <div class="box">Orcodio</div>
+        <div class="box">Orcodio</div>
+        <div class="box">Orcodio</div>
+
+    </div>
+</body>
+
+</html>

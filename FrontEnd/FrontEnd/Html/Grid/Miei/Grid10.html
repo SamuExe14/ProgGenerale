@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .griglia {
+            display: grid;
+            grid-template-columns: max-content auto;
+            grid-template-rows: 50px max-content 50px;
+            grid-template-areas: "header header "
+                "sidebar content"
+                "sidebar2 sidebar2"
+                "footer footer";
+            gap: 10px;
+
+        }
+
+        .box {
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 150%;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #999;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .sidebar2 {
+            grid-area: sidebar2;
+            background-color: #ccc;
+            color: #444;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #999;
+        }
+
+
+        @media screen and (min-width: 500px) {
+            .griglia {
+
+                grid-template-columns: 20% auto;
+                grid-template-rows: 50px min-content 50px;
+                grid-template-areas: "header header"
+                    "sidebar content"
+                    "sidebar2 sidebar2"
+                    "footer footer";
+                gap: 10px;
+
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            .griglia {
+                gap: 10px;
+                grid-template-columns: 120px auto 120px;
+                grid-template-areas: "header header header"
+                    "sidebar content sidebar2"
+                    "footer footer footer";
+                max-width: 600px;
+            }
+
+            @media screen and (max-width: 500px) {
+                .griglia {
+
+                    grid-template-columns: 20% auto;
+                    grid-template-rows: 50px min-content 50px;
+                    grid-template-areas: "header header"
+                        "sidebar content"
+                        "sidebar2 sidebar2"
+                        "footer footer";
+                    gap: 10px;
+
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="griglia">
+        <div class="box header">Header</div>
+        <div class="box sidebar">Sidebar</div>
+        <div class="box content">Content Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi unde
+            maxime iusto architecto
+            voluptatum non quas fugiat fuga officiis doloremque, quasi quo nostrum nihil aut porro, voluptas omnis
+            voluptatibus..</div>
+        <div class="box sidebar2">Sidebar2</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+
+</html>

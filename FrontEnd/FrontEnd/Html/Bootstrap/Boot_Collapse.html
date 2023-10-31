@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: darkgrey;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>
+                    <!-- zona di attivazione -->
+                    <a href="#testocollapse" class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false"
+                        aria-controls="testocollapse">Collapse element</a>
+                </p>
+                <!-- elementi per mostrare il contenuto collapse -->
+                <div id="testocollapse" class="collapse ">
+                    <div class="card card-body ">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid voluptates voluptas
+                            tempore? Molestiae quidem eveniet adipisci quo possimus? Porro unde iure ut repellat illo
+                            officiis inventore quod quas nam pariatur!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="accordion" id="testoAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-button overflow-auto" data-bs-toggle="collapse" data-bs-target="#accordion1">
+                            Testo Accordion
+                        </button>
+                    </div>
+                    <div class="accordion-collapse collapse show" data-bs-parent="accordion1" id="accordion1">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptatibus, voluptates
+                            cumque rerum, cupiditate nemo temporibus maiores eaque eius quasi iste dolor ex laborum quam
+                            eveniet vero optio dicta ea voluptas obcaecati nesciunt tenetur veniam. Similique hic, enim
+                            vero eveniet dolorum, beatae debitis quaerat eaque sequi voluptate rem eligendi tempora!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../../Bootstrap/js/bootstrap.bundle.js"></script>
+
+</html>

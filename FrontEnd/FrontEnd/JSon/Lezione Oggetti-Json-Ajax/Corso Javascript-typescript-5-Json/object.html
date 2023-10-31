@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const car = {
+            color: 'orange',
+            'new color': 'green',
+            start: function () {
+                console.log("start called")
+                console.log(`start called: color is ${this.color}`)
+                console.log(`start called: new color is ${this['new color']}`)
+            },
+            goTo: function (destination) {
+                console.log(`destination ${destination}`)
+
+            }
+        }
+
+        car.goTo("Roma")
+
+        console.log(car.color)
+        let color = car.color
+        console.log("color = ", color)
+        console.log("car [color] = ", car['color'])
+
+        let newColor = car['new color']
+        let type = car.type
+        console.log("type = ", type)
+        console.log(`type = ${type}`)
+
+
+        car.color = 'yellow'
+        car['new color'] = 'red'
+        console.log("color = ", car.color)
+        console.log("car ['new color'] = ", car['new color'])
+
+        car.model = 'Diesel'
+        console.log("car.model = ", car.model)
+
+        console.log("car = ", car)
+        delete car.model
+        console.log("car = ", car)
+
+        // richiamare una funzione dentronun oggetto
+        car.start()
+
+
+    </script>
+</body>
+
+</html>

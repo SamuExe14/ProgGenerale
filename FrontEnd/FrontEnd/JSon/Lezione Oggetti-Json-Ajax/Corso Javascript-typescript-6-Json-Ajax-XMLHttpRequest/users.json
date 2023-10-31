@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Leanne Graham",
+            "age": "40",
+            "email": "sincere@april.biz",
+            "pets": [
+                "rabbit",
+                "dog"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Valentino Romano",
+            "age": "46",
+            "email": "vr@cosmopolis.biz",
+            "pets": [
+                "cat",
+                "dog"
+            ]
+        }
+    ]
+}

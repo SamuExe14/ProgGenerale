@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="myStyle.css">
+    <title>Primo esempio: Corso Js (6) Ajax HMLRequest</title>
+</head>
+
+
+<body>
+    <h1>Corso Js (6) Ajax HMLRequest - First-example </h1>
+    <div id="demo">Qui vedrai i dati del server dopo la richiesta</div>
+    <button id="simpleButton" onclick="showAjaxInAction();">Click me</button>
+
+    <script>
+        function showAjaxInAction() {
+
+            // Oggetto XMLHttpRequest
+            let request = new XMLHttpRequest();
+
+            //		     method     url      asyn
+            request.open("GET", "user.json", true) // Creazione e invio
+
+            // Invio richiesta
+            request.send();
+
+            // Callback: verrà eseguita quando la risposta sarà pronta
+            request.onload = function () {
+                //document.getElementById("demo").innerHTML = request.response
+                console.log("response = ", request.response)
+                //demo.innerHTML = request.response
+                // non va perchè?
+                let user = JSON.parse(request.response)
+                console.log("response: user = ", user)
+                let formattedUser = `
+                    <li> ${user.id} - ${user.name} age ${user.age} mail ${user.email}
+                `
+                demo.innerHTML = formattedUser
+            }
+
+        }
+    </script>
+</body>
+
+</html>

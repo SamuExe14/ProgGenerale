@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            font-size: 50px;
+            margin: 10px;
+            background-color: rgb(100, 200, 6);
+            border-radius: 10px;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 50px;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+
+        .color {
+            background-color: rgb(239, 176, 176);
+        }
+
+        .newStyle {
+            background-color: orange;
+            color: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <button id="pressID">Press me ID</button>
+        <button class="pressCLASS">Press me Class</button>
+        <button class="pressCLASS">Press me (tag name)</button>
+        <button id="pressSecondId"> Press me (tag name)</button>
+
+        <p class="test"></p>
+        <div class="test"></div>
+        <div class="color">
+            <section></section>
+        </div>
+    </div>
+
+    <script>
+        let qsB = document.querySelector("button")
+        console.log("querySelector button = ", qsB)
+
+        let qsAll = document.querySelectorAll("button")
+        console.log("querySelectorAll button = ", qsAll)
+
+        let gEBID = document.getElementById("pressSecondId")
+        console.log("getElementById = ", gEBID)
+
+        let gEBCN = document.getElementsByClassName("pressCLASS")
+        console.log("getElementByClassName = ", gEBCN)
+
+        let gEBTN = document.getElementsByTagName("button")
+        console.log("getElementByTagName = ", gEBTN)
+
+        //! Creazione di un nuovo nodo
+
+        let mySection = document.querySelector("section")
+        console.log("mySection = ", mySection)
+
+        let myParagraph = document.createElement("p")
+        myParagraph.textContent = "Ciao Devs"
+        mySection.appendChild(myParagraph)
+
+        let mySectionTag = document.getElementsByTagName("section")
+        console.log(mySectionTag)
+        mySectionTag[0].appendChild(myParagraph)
+
+        let extraText = document.createTextNode(" (questo è un testo extra)")
+        console.log("extraText = ", extraText)
+        myParagraph.append(extraText)
+
+        let innerParagraph = document.createElement("p")
+        mySectionTag[0].appendChild(innerParagraph)
+        innerParagraph.innerText = "Stocazzo"
+
+        innerParagraph.innerHTML = "<span> testo in span </span>"
+
+        //myParagraph.removeChild(extraText)
+
+        //myParagraph.remove(extraText)
+
+        myParagraph.style.color = 'red'
+        myParagraph.style.backgroundColor = 'yellow' 
+
+        myParagraph.className = "newStyle"
+        console.log(myParagraph.classList[0])
+
+        
+        
+        
+        
+        let getElement = document.getElementsByTagName("body")
+        let newText = document.createElement("div")
+        getElement[0].append(newText)
+
+        
+
+        newText.innerHTML = "<h1><strong> Testo strong </strong></h1>"
+
+        console.log(newText)
+
+        let new_Text = document.createElement("div")
+        getElement[0].append(new_Text)
+        new_Text.innerHTML = "<p> Questo testo testo è in <b> grassetto</b></p>"
+
+        console.log(new_Text)
+
+    </script>
+
+
+</body>
+
+</html>

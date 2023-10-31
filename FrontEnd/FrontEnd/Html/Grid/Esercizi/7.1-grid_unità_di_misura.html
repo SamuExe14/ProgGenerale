@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .griglia1 {
+
+            /* contenitore griglia a tre colonne largo 900px. 
+             la larghezza della prima colonna (sinistra) è fissa (cioè non cambia)
+             a 300px la seconda colonna occupa un'unità frazionaria ( 1fr) e la terza
+             colonna pesa due unità frazionarie ( 2fr):
+             Le seconde due colonne sono frazionarie, quindi occuperanno tutto 
+             lo spazio disponibile rimanente.
+             1fr = ([larghezza container] - [colonna a larghezza fissa]) / [somma degli elementi griglia]
+             1fr = (900px - 300px) / 3
+             1fr = 600px / 3
+            1fr = 200px
+            in realtà nel calcolo della griglia va inserito lo spazio dovuto al gap tra le colonne
+            */
+            display: grid;
+            width: 900px;
+            grid-template-columns: 300px 1fr 2fr;
+            gap: 10px;
+            margin-bottom: 15px;
+            
+         }
+
+         .griglia2
+         {
+            display: grid;
+            max-width: 900px;
+            /* griglia con prima colonna a 200px e seconda che può variare da
+            min 150px a 550px
+            dentro minmax puoi mettere qualsiasi unità ma su min non
+            si può usare unità fr */
+            grid-template-columns: 200px minmax(150px, 550px) ;
+            gap:10px;
+            margin-bottom: 15px;
+         }
+
+         .griglia3
+         {
+            /* larghezza delle colonne determinata automaticamente */
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap:10px;
+         }
+         .griglia4
+         {
+            /* tre colonne: 2 auto e quella centrale usa lo spazio che le rimande in base al contenuto
+            delle altre 2 */
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap:10px
+         }
+         /* La min-contentparola chiave rappresenta la minima quantità di spazio possibile che un elemento può occupare in un
+          contenitore della griglia senza traboccare del suo contenuto. I contenuti possono essere testi, 
+          immagini o video. */
+         .griglia5
+         {
+
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            gap: 10px
+
+         }
+         .griglia6
+         {
+            /* Se rivisitiamo il nostro min-content esempio sopra, una traccia della griglia
+             con un valore di dimensione max-content crescerà fino a quando il suo contenuto 
+             non potrà entrare in una singola riga.
+             */
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap:10px;
+            margin-bottom: 15px;
+
+         }
+
+         .griglia7
+         {
+            display: grid;
+            /* fint content indica la possiblità di usare solo lo spazio che 
+            ti serve ma restando nei limiti imposti */
+            grid-template-columns: fit-content(500px) fit-content(500px) 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+         }
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid blue;
+            color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: .9em;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>griglia 1</h2>
+    <div class="griglia1">
+
+        <div class="box">a</div>
+        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium reiciendis, nulla nisi mollitia ex culpa beatae quae totam provident, veritatis ad aut nesciunt rerum nostrum distinctio natus dignissimos inventore. Ullam!</div>
+        <div class="box"></div>
+        <div class="box">d</div>
+    </div>
+    <h2>griglia2</h2>
+    <div class="griglia2">
+        <div class="box">a</div>
+        <div class="box">b</div>
+        <div class="box">c</div>
+        <div class="box">d</div>
+    </div>
+    <h2>griglia3 auto</h2>
+    <div class="griglia3">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+   </div>
+   <h2>griglia 4 auto 1fr auto</h2>
+   <div class="griglia4">
+    <div class="box">auto si calibra sul contenuto</div>
+    <div class="box">1 fr</div>
+    <div class="box">auto</div>
+   </div>
+   <h2>griglia 5 con 2 colonne: 1min-content 2fr</h2>
+   <div class="griglia5">
+        <div class="box">colonna1 supercalifragili</div> 
+        <div class="box">colonna fr</div>
+   </div>
+   <h2>griglia 6 con 2 colonne : maxcontent 1 fr</h2>
+   <div class="griglia6">
+        <div class="box">allargarti in base al contenuto ma rispetta i 700px</div>
+        <div class="box">allargarti in base al contenuto ma rispetta i 700px Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, dolorum unde officiis in voluptatum a quae accusantium laborum maiores saepe maxime quidem voluptatibus possimus ea excepturi dicta officia soluta molestiae iste eos veritatis ullam. Odit, voluptate ab consequatur quia aliquam, possimus ad impedit exercitationem voluptatibus ducimus doloribus deserunt unde tempora tenetur itaque reprehenderit est voluptatum earum aut quos assumenda sint, facilis laborum. Omnis magnam, doloremque veniam ipsam numquam nesciunt dignissimos labore, ad nobis saepe commodi repellendus quod laboriosam eius a voluptates alias iusto dicta sapiente aperiam voluptatum inventore corporis tempora asperiores. Quidem explicabo quo officia, obcaecati repellendus eligendi dignissimos nam!</div>
+        <div class="box">colonna con unità di misura in fr</div>
+   </div>
+   <h2>griglia 7 con 2 colonne : 2fillcontent con misura ed 1 fr</h2>
+   <div class="griglia7">
+        <div class="box">allargarti in base al contenuto ma max dentro le misure indicate</div>
+        <div class="box">allargarti in base al contenuto ma rispetta le misure max indicate Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, dolorum unde officiis in voluptatum a quae accusantium laborum maiores saepe maxime quidem voluptatibus possimus ea excepturi dicta officia soluta molestiae iste eos veritatis ullam. Odit, voluptate ab consequatur quia aliquam, possimus ad impedit exercitationem voluptatibus ducimus doloribus deserunt unde tempora tenetur itaque reprehenderit est voluptatum earum aut quos assumenda sint, facilis laborum. Omnis magnam, doloremque veniam ipsam numquam nesciunt dignissimos labore, ad nobis saepe commodi repellendus quod laboriosam eius a voluptates alias iusto dicta sapiente aperiam voluptatum inventore corporis tempora asperiores. Quidem explicabo quo officia, obcaecati repellendus eligendi dignissimos nam!</div>
+        <div class="box">colonna con unità di misura in fr</div>
+   </div>
+
+</body>
+</html>

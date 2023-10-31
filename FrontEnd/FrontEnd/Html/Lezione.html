@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            width: 900px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        th {
+            font-size: 1em;
+            border-bottom: 2px solid darkgray;
+            text-transform: uppercase;
+            border-top: 1px solid darkgrey;
+            text-align: left;
+        }
+
+        tr.even {
+            background-color: blueviolet;
+        }
+
+        tr:hover {
+            background-color: chocolate;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        .money {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>un pò di css sulle tabelle</h1>
+
+    <table>
+        <tr>
+            <th>autore</th>
+            <th>titolo</th>
+            <th>prezzo standard</th>
+            <th>prezzo abbonato</th>
+        </tr>
+
+        <tbody>
+            <tr class="even">
+                <td>autore1</td>
+                <td>titolo1</td>
+                <td class="money">123</td>
+                <td class="money"> 84</td>
+            </tr>
+            <tr>
+                <td>autore1</td>
+                <td>titolo1</td>
+                <td class="money">123</td>
+                <td class="money"> 84</td>
+            </tr>
+            <tr class="even">
+                <td>autore1</td>
+                <td>titolo1</td>
+                <td class="money">123</td>
+                <td class="money"> 84</td>
+            </tr>
+            <tr>
+                <td>autore1</td>
+                <td>titolo1</td>
+                <td class=" money">123</td>
+                <td class="money"> 84</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

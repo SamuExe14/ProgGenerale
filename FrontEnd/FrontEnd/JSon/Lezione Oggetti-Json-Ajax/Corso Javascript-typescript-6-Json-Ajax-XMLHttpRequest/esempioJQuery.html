@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">Non siamo ancora attivi</div>
+    <div id="bs">Avviso Da beforeSend</div>
+    <button id="simple">Click me (JQuery example)</button>
+    <button id="complete">Click me (JQuery example)</button>
+
+    <!--Link CDN Google alla Libreira di JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#simple').click(function () {
+                $.ajax('user.json')
+                    .done(function (res) {
+                        console.log('res = ', res)
+                        let user = JSON.parse(res)
+                        console.log('user = ', user)
+
+                        //$('#demo').text(res);
+                        $('#demo').empty()
+                        $('#bs').empty()
+                        $('#demo').append(`<div>${res.name}</div>`);
+                    })
+            })
+        });
+
+
+        $(document).ready(function () {
+            $('#complete').click(function () {
+                $.ajax('user.json', {
+                    beforeSend: function () {
+                        $('#bs').text('Sto caricando i dati … parte lo spinner');
+                    }
+                })
+                    .done(function (res) {
+                        console.log('res = ', res)
+                        //$('#demo').text(res);
+                        $('#demo').empty()
+                        $('#demo').append(`<div>${res.name} ${res.email}</div>`);
+                    })
+
+                    .always(function () {
+                        $('#bs').text('Dati caricati!');
+                    })
+
+                    .fail(function (errorType, errorMessage) {
+                        alert(errorMessage)
+                        console.log(errorType)
+                    })
+            })
+        });
+
+
+    </script>
+</body>
+
+</html>

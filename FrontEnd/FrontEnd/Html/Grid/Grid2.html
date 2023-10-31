@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .griglia {
+            display: grid;
+            grid-auto-columns: 100px;
+            height: auto;
+            /* grid-template-columns: 100px 100px 100px 100px 100px; */
+            gap: 10px 10px;
+            margin-bottom: 15;
+            background-color: bisque;
+        }
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+
+        .a {
+            grid-column: 1 / 4 ;
+            grid-row: 1 ;
+        }
+
+        .b {
+            grid-column: 2 / 3;
+            grid-row: 2 / 4;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+
+    <div class="griglia">
+        <div class="box a">primo</div>
+        <div class="box b">secondo</div>
+        <div class="box">terzo</div>
+        <div class="box">quarto</div>
+    </div>
+</body>
+
+</html>

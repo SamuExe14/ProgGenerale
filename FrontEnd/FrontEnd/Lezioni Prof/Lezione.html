@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduzione a Javascript</title>
+
+    <!-- <script type="text/javascript" src="miojavascript.js"></script> -->
+    <style>
+        p {
+            font-size: 50px;
+            background-color: rgb(100, 200, 6);
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hello by Javascript: interazione: alert - prompt - confirm </p>
+
+    <script>
+
+
+        let counter = 0
+        const characters = 'abc';
+        let arrayOfChoices = []
+        while (counter < characters.length) {
+            result = characters.charAt(Math.floor(Math.random() * characters.length));
+            counter++
+            arrayOfChoices.push(result)
+            console.log('result: ', result);
+        }
+        console.log('arrayOfChoices: ', arrayOfChoices);
+
+
+        let quiz = ['Js è un linguaggio tipizzato? A) No, B) Si C) fortemente tipizzato',
+            'In Js una costante si indica con: A) var, B) let, C) const',
+            'Js è più simile ? A) C++, B) Php, C) Kotlin'
+        ];
+
+        let soluzioni = ['a', 'c', 'b'];
+
+
+        let punteggio = 0;
+        let risposta;
+        for (let i = 0; i < quiz.length; i++) {
+            if (arrayOfChoices[i] !== soluzioni[i]) {
+                console.log('risposta errata');
+                continue;
+            }
+
+            punteggio++;
+            console.log('risposta corretta!');
+        }
+
+        console.log('punteggio: ', punteggio);
+
+
+
+
+        // ********** alert
+        //alert("Quessto è un alert");
+        /*
+        // ********** prompt
+        let result = prompt("Quessto è un prompt", "Ciao");
+        console.log('result:', result);
+        // ********** confirm
+        let isDev = confirm("Are you a js Dev?");
+        console.log('isDev:', isDev);
+        alert(isDev); // true se viene premuto OK
+        */
+        /*
+            let myValue = prompt("Inserisci il tuo nominativo")
+            console.log(myValue)
+            alert(myValue.toUpperCase())
+            console.log(myValue.charAt(0))
+        */
+
+
+        // ********** Continue & brak statement **********
+
+        // Abbiamo già visto il break nello switch che ci permetteva di uscire dallo switch una volta entrato in un case
+        // si puo usare an che in altro esempio per fermare un ciclo for che altrimenti andrebbe fino alla fine 
+
+        // Ceracare il numoero 3 ciclando da 0 a 10, e una volta troavato uscire dal for
+        console.log("Esercizio break: semplice\n")
+
+        let pippo = "pippo"
+
+
+        for (let i = 0; i < 10; i++) {
+            if (i === 3) {
+                console.log("Look here " + i)
+                break;
+            }
+            console.log("The number is " + i)
+        }
+
+        // o meglio ancora se volessi cercare un valore dentro un array e uscire una vota trovato
+        console.log("Esercizio break: complesso\n")
+
+        let myArray = [1, 5, 7, 2, 3, 10]
+
+        for (let i = 0; i < myArray.length; i++) {
+            console.log("myArray[i] " + myArray[i])
+            if (myArray[i] === 2) {
+                console.log("Look here , 2 stay at index " + i)
+                break;
+            }
+        }
+
+
+        // ********** continue // voglio saltare proprio il 3
+        // Il continue mi permette di saltare alla prossima interazione di un 
+        // loop(esempio il for o il while) evitando quindi una operazione all'interno del ciclo, 
+        // se si verifica una certa condizione:
+        // Esempio: voglio ciclare tutti i numeri da 0 a 5 e stampare ogni numero tranne il 3
+        // console.log("Esericizio continue: semplice\n")
+
+        for (let i = 0; i < 5; i++) {
+            if (i === 3) { continue; }
+            console.log("item " + i)
+        }
+
+
+
+        // sommare tutti i numeri da 0 a 10 tranne il 3
+        console.log("Esericizio continue: somma\n")
+
+        let tot = 0
+        for (let i = 0; i < 5; i++) {
+            if (i === 3) { continue; }
+            tot = tot + i
+            console.log("item " + i)
+        }
+        console.log("tot: " + tot)
+
+        console.log("Esericizio QUIZ\n")
+
+
+        for (let item = 3; item <= 8; item++) {
+            console.log("item " + item)
+        }
+
+
+        let myVar = 100
+
+        for (let item = 100; item <= 104; item++) {
+            if (item === 104) {
+                console.log("item è " + item)
+            }
+        }
+
+
+        let myArrayOfString = ['a', 'b', 'c', 'd',]
+        console.log('myArrayOfString = ', myArrayOfString)
+
+        let myEmptyArray = []
+        console.log('myEmptyArray = ', myEmptyArray)
+
+        //myEmptyArray.push('e')
+        //console.log('myEmptyArray = ', myEmptyArray)
+
+        for (const item of myArrayOfString) {
+            console.log('item = ', item)
+            myEmptyArray.push(item)
+        }
+        console.log('myArrayOfString = ', myArrayOfString)
+        console.log('myEmptyArray = ', myEmptyArray)
+
+
+        let emptyArray = []
+
+        emptyArray.push(1)
+        emptyArray.push(2)
+        emptyArray.push(6)
+        emptyArray.push(4)
+        emptyArray.push(7)
+        console.log('emptyArray = ', emptyArray)
+
+        for (const item of emptyArray) {
+            if (item % 2 !== 0) {
+                console.log('item = ', item)
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

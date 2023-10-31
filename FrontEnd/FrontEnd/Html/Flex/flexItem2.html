@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div {
+            display: flex;
+            height: 128px;
+            border: 3px solid salmon;
+        }
+
+        img {
+            margin: 10px;
+            border: 2px solid sandybrown;
+        }
+
+        img:nth-child(2) /*sul secondo figlio*/
+        {
+            flex-grow: 1; /*occupa tutto il contenitore */
+            flex-shrink: 0;
+        }
+
+        ul {
+            height: 100px;
+            display: flex;
+            border: 2px solid black;
+            list-style: none;
+            background-color: blanchedalmond;
+            justify-content: flex-end;
+        }
+        li {
+            margin: 5px 5px 5px;
+            padding: 0px 5px 0px;
+            align-items: center;
+            flex-grow: 1;
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/strawberry.png" alt="">
+        <img src="./images/bell-pepper.png" alt="">
+        <img src="./images/lemon.png" alt="">
+        <img src="./images/bell-pepper.png" alt="">
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas illo labore explicabo alias nam. Vero eligendi totam praesentium ex culpa ipsam architecto a cumque omnis, saepe nulla, odit laboriosam assumenda.</p> -->
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ad quos quaerat odio, repudiandae saepe eligendi dolores aut neque, ut culpa. Reiciendis officia omnis in. Commodi eaque excepturi assumenda eveniet.</p> -->
+    </div>
+
+    <div>
+
+        <img src="./images/strawberry.png" alt="">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi recusandae eaque nisi quia enim sunt! Minus error atque aspernatur officiis quas incidunt, ipsum hic sit nemo possimus nam eligendi asperiores distinctio eius ad explicabo officia quibusdam eos, numquam dolor aliquid, vero accusantium minima. Tempore nisi earum provident delectus alias nesciunt?</p>
+        <img src="./images/lemon.png" alt="">
+        <img src="./images/bell-pepper.png" alt="">
+    </div>
+
+   
+    <ul>
+        <li>flex-item1</li>
+        <li>flex-item2</li>
+        <li>flex-item3</li>
+        <li>flex-item4</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+        ul {
+            display: flex;
+            background-color: lightseagreen;
+        }
+
+        li {
+            list-style: none;
+            flex: 0 0 auto;
+            background-color: lightblue;
+            padding:  10px;
+            color: white;
+        }
+
+        li:nth-child(1) {
+            margin-right: auto;  /*in flex margin auto sarebbe come grow ma usando anche le unita di misura*/
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+</body>
+</html>

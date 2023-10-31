@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        } 
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0;
+            font-size: 3vh;
+        }
+
+        #main {
+            display: flex;
+            flex: 1;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        #main > article {
+            flex: 1;
+        }
+
+        #main > nav, #main > aside {
+            flex: 0 0 25vw;
+            background-color: yellowgreen;
+        }
+
+        header,footer {
+            background-color:greenyellow;
+            height: 15vh;
+        }
+
+    </style>
+</head>
+<body>
+    <header>intestazione</header>
+    <div id="main">
+        <article>laterale 1</article>
+        <nav>navigazione</nav>
+        <aside>laterale 2</aside>
+    </div>
+
+    <footer>footer</footer>
+</body>
+</html>

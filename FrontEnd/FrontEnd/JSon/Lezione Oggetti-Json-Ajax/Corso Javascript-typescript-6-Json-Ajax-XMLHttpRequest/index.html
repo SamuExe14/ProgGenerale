@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduzione a Javascript</title>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+
+<body>
+    <h1>Corso Js (6) Ajax HMLRequest</h1>
+    <h1>Hello devs</h1>
+    <button id="simple" onclick="showAjaxInAction();">Click me</button>
+    <button id="autoparse" onclick="showAjaxAutoParseInAction();">Click me for autoparse</button>
+    <button id="autoparsearray" onclick="showAjaxAutoParseArrayInAction();">Click me for autoparse array</button>
+
+    <div id="demo">Non siamo ancora attivi</div>
+
+    <script>
+
+
+        // *********** Json & Ajax Request **********
+
+        // Immaginianom adesso che la fonte sia users_array.json 
+        // che è un { users:[ {}, {}, {} ] }
+        function showAjaxInAction() {
+            let request = new XMLHttpRequest(); // Oggetto XMLHttpRequest
+            //           method   url         async
+            request.open("GET", "users.json", true) // Creazione e invio
+            request.send()// Invio richiesta
+
+            // Callback: verrà eseguita quando la risposta sarà pronta
+            request.onload = function () {
+                console.log(`request.responseText =\n${request.responseText}`)//*1
+                const arrayResult = JSON.parse(request.responseText)//*2
+                console.log(`users[0] = ${arrayResult.users[0].name}`)
+                document.getElementById("demo").innerHTML = request.responseText
+                //document.getElementById("demo").innerHTML = arrayResult.users[0].name
+                renderResult('Simple', arrayResult.users)
+            }
+        }
+
+        function showAjaxAutoParseInAction() {
+            let request = new XMLHttpRequest(); // Oggetto XMLHttpRequest
+            request.open("GET", "users.json", true) // Creazione e invio
+            request.responseType = 'json'
+            request.send()
+
+            // Callback: verrà eseguita quando la risposta sarà pronta
+            request.onload = function () {
+                console.log(request.response)
+                // non effettuo parse perchè ho inserito nella richiesta con request.responseType = 'json'
+                const arrayResult = request.response
+                console.log(`users.length= ${arrayResult.users.length}`)
+                console.log(`users[0] = ${arrayResult.users[0].name}`)
+                //document.getElementById("demo").innerHTML = arrayResult.users[0].name
+                renderResult('Autoparse', arrayResult.users)
+            }
+        }
+
+        function renderResult(message, users) {
+            console.log(`renderResult:users.length= ${users.length}`)
+            let result = message
+            for (var i = 0; i < users.length; i++) {
+                console.log(i);
+                result += `<li> ${users[i].name}</li>`;
+                console.log("result = " + result);
+            }
+            document.getElementById('demo').innerHTML = result
+        }
+
+
+
+        // Immaginianom adesso che la fonte sia users_array.json che è un [{}, {}, {}]
+        function showAjaxAutoParseArrayInAction() {
+            let request = new XMLHttpRequest(); // Oggetto XMLHttpRequest
+            request.open("GET", "users_array.json", true) // Creazione e invio
+            request.responseType = 'json'
+            request.send()
+
+            // Callback: verrà eseguita quando la risposta sarà pronta
+            request.onload = function () {
+                console.log(request.response)
+                const arrayResult = request.response
+                console.log(`users.length= ${arrayResult.length}`)
+                console.log(`users[0] = ${arrayResult[0].name}`)
+                //document.getElementById("demo").innerHTML = arrayResult.users[0].name
+                renderResult('Autoparse Array', arrayResult)
+            }
+        }
+    </script>
+</body>
+
+</html>

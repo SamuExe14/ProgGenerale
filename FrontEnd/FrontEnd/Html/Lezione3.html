@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .principale {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .principale:hover {
+            background-color: blue;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .figli {
+            display: none;
+            background-color: skyblue;
+            min-width: 200px;
+
+        }
+
+        .figli a {
+            color: blue;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .figli {
+
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="principale"></button>
+        <div class="figli">
+            <a href="#">SubStoca</a>
+            <a href="#">SubStoca</a>
+            <a href="#">SubStoca</a>
+            <a href="#">SubStoca</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

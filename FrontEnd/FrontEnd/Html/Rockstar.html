@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Bootstrap</title>
+
+    <style>
+        .navbar {
+            display: grid;
+            background-color: rgb(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            margin: -11px;
+            color: white;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .bootstrap {
+            display: grid;
+            grid-template-columns: max-content auto auto auto max-content max-content max-content;
+            margin-left: 15px;
+            margin-top: 15px;
+            padding: 1px;
+        }
+
+        a {
+            text-decoration: dashed;
+            color: white;
+        }
+
+        a:hover {
+            color: greenyellow;
+        }
+
+        .rock {
+            height: 560px;
+            text-align: center;
+        }
+
+        .rock img {
+            width: 104%;
+            height: 560px;
+            margin-top: -43px;
+            margin-left: -7px;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .rock h1 {
+            text-align: center;
+            margin-top: -350px;
+            color: white;
+            font-size: 4em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .rock h2 {
+            color: white;
+            margin-top: -0px;
+            font-size: 3em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .rock button {
+            background-color: rgb(240, 77, 240);
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            border: none;
+            margin: -10px;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        @media screen and (max-width:500px) {
+            .rock h1 {
+                margin-top: -500px;
+
+            }
+
+            .rock h2 {
+                margin-top: -40px;
+            }
+
+            .rock button,
+            a {
+                padding: 15px;
+                border-radius: 50px;
+                margin-top: -20px;
+            }
+
+            .rock img {
+                width: 500px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 600px 600px 600px;
+            }
+        }
+
+        /*/////////////////  */
+        .grid {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 300px 300px 300px;
+        }
+
+        .box {
+            background-color: transparent;
+            text-align: right;
+
+        }
+
+        .text {
+            text-align: left;
+            margin-left: 20px;
+            padding: 50px;
+        }
+
+        .imageRight {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            margin-left: 60px;
+            margin-top: 10px;
+            overflow: hidden;
+            border: 0px;
+        }
+
+        .imageLeft {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            margin-left: 70px;
+            margin-top: 10px;
+            overflow: hidden;
+            border: 0px;
+        }
+
+        .footer {
+            background-color: rgb(0, 0, 0, 0.9);
+            width: 100%;
+            margin: -10px;
+            color: white;
+            padding: 10px;
+            height: 40px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="bootstrap">
+            <a href="https://getbootstrap.com" style="margin-left: 10px;">Start bootstrap</a>
+            <p></p>
+            <p></p>
+            <p></p>
+            <a href="" style="text-align: right;">Sign Up</a>
+            <a href="LogIn.html" style="margin-left: 15px; margin-right: 10px; text-align: left;">Log In</a>
+        </div>
+    </div>
+
+    <div class="rock">
+        <img src="https://www.yesmilano.it/sites/default/files/styles/testata_full/public/event_top_event/copertina/6749/26639/2023%20musica.png?itok=Fbl6hHuq"
+            alt="">
+        <h1>You can't arrest me!</h1>
+        <h2>I'm a rockstar</h2>
+        <button><a href="">LEARN MORE</a></button>
+    </div>
+
+    <div class="grid">
+        <div class="box text">
+            <h1>Let there be rock!</h1>
+            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi corrupti sed excepturi quas totam minima
+                iusto nesciunt nemo ipsa explicabo. Illum at vitae atque temporibus? Neque ipsum minima incidunt eum.
+            </h6>
+        </div>
+        <div class="box imageRight">
+            <span>
+                <img style="width: 450px; margin-left: -90px"
+                    src="https://www.myfirstevent.com/wp-content/uploads/2022/06/sanam-puri.jpg" alt="">
+            </span>
+        </div>
+        <div class="box imageLeft">
+            <span>
+                <img style="margin-left: -140px; margin-top: -10px; width: 700px;"
+                    src="https://wwd.com/wp-content/uploads/2023/05/lionel-richie-coronation-concert.jpg" alt="">
+            </span>
+        </div>
+        <div class="box text">
+            <h1>Rock is a model of life, it's not just sounds!</h1>
+            <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, perspiciatis. Tenetur vel nulla sunt
+                voluptatum neque nihil nam asperiores, ipsa corrupti mollitia. Et ducimus culpa dolorem laudantium
+                corporis voluptas id</h6>
+        </div>
+        <div class="box text">
+            <h1>Rock is here to stay!</h1>
+            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. A veniam dolore eligendi facere nostrum
+                accusantium assumenda, beatae possimus quasi repellat, in nemo repudiandae necessitatibus? Tempore quasi
+                temporibus laudantium quae atque!</h6>
+        </div>
+        <div class="box imageRight">
+            <span>
+                <img style="margin-left: -80px; width: 400px;"
+                    src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-11189-rockstar-624-1370288223.jpg"
+                    alt="">
+            </span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright© a cura de stograncazzo</p>
+    </div>
+
+</body>
+
+</html>

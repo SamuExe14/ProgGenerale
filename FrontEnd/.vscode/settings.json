@@ -1,0 +1,82 @@
+
+{
+        "workbench.colorTheme": "Monokai Vibrant",
+            "terminal.integrated.env.windows": {},
+            "workbench.iconTheme": "vscode-icons",
+            "[html]": {
+                "editor.defaultFormatter": "vscode.html-language-features"
+            },
+            "files.autoSave": "onFocusChange",
+            "liveServer.settings.donotShowInfoMsg": true,
+            "editor.minimap.enabled": false,
+            "auto-rename-tag.activationOnLanguage": [
+            
+                "*"
+            ],
+            "editor.accessibilitySupport": "on",
+            "[jsonc]": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+            },
+
+            "colorize.colorized_colors": [
+                "BROWSERS_COLORS",
+                "HEXA",
+                "RGB",
+                "HSL"
+            ],
+        
+            // You can specified the type of variables that should be colorized by the extension.
+            "colorize.colorized_variables": [
+                "CSS",
+                
+            ],
+        
+            // 
+            "colorize.decoration_type": "background",
+        
+            // When vscode starts, Colorize fetch all files targeted by the settings `colorize.include` and `colorize.languages` but not the ones targeted by the setting `colorize.exclude`. When the fetch is done, colorize open and parse all files searching for variables. That way variables will be colorized in every files. _⚠️ this setting can slown down your editor a little at opening time, read this [issue](https://github.com/KamiKillertO/vscode-colorize/issues/174) to learn more about it._
+            "colorize.enable_search_variables": true,
+        
+            // Configure glob patterns for excluding files and folders. Colorize will not colorized colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
+            "colorize.exclude": [
+                "**/.git",
+                "**/.svn",
+                "**/.hg",
+                "**/CVS",
+                "**/.DS_Store",
+                "**/.git",
+                "**/node_modules",
+                "**/bower_components",
+                "**/tmp",
+                "**/dist",
+                "**/tests"
+            ],
+        
+            // Hide colors for the current line. Set to `false` to turn it off
+            "colorize.hide_current_line_decorations": true,
+        
+            // Configure glob patterns for including files and folders. By default Colorize is enable for files matching one the languages defined in the `colorize.languages` config, with this config you can enable colorize for other files or folders. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
+            "colorize.include": [
+                "**/*.css",
+                "**/*.scss",
+                "**/*.sass",
+                "**/*.less",
+                "**/*.styl",
+                "**/*.html"
+            ],
+        
+            // Configure a list of languages that should be colorized. A list of languages can be find at https://code.visualstudio.com/docs/languages/identifiers. You can learn about languages at https://code.visualstudio.com/docs/languages/overview.
+            "colorize.languages": [
+                "css",
+                "sass",
+                "scss",
+                "less",
+                "postcss",
+                "sss",
+                "stylus",
+                "xml",
+                "svg",
+                "html",
+                "javascript"
+            ],
+    }

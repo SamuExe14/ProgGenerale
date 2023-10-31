@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Scrivi un programma che dato un array di numeri trovi il numero Massimo
+        // e il Minimo
+        // Esempio:arrayOfNumbers = [10, 30, 90, 40, -10]Output:  Max = 90;  Min = -10 
+        // Consiglio: usare solo metodi e funzioni o iterazioni che conosciamo
+
+        function ordinamento(a, b) { return a - b }
+
+        let arrayOfNumbers = [40, 29, 58, 100, 64];
+
+        let index = -1;
+
+
+        arrayOfNumbers.sort(ordinamento)
+
+        console.log(arrayOfNumbers)
+
+        for (let number of arrayOfNumbers) {
+            index++
+            if (index == 0) {
+                console.log("Il numero più piccolo è", number,)
+            }
+        else if (index == 4) {
+            console.log("Mentre il più grande è", number)
+        }
+    }
+
+
+
+    </script>
+
+</body>
+
+</html>l

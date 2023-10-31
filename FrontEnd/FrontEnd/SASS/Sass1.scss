@@ -1,0 +1,61 @@
+$border: 2px;
+$align-text: center;
+$padding: 30px;
+$padding1: 40px;
+$colore1: red;
+$colore2: rgb(120, 0, 120, 0.5);
+$colore3: green;
+
+body {
+    background-color: grey;
+    color: beige;
+}
+
+h1 {
+    background-color: orange;
+    color: blue;
+    text-align: $align-text;
+}
+
+.paragrafo1 {
+    border: 4px double black;
+    padding: $padding;
+}
+
+.paragrafo2 {
+    border: 1px solid violet;
+    padding: $padding1;
+    color: $colore2;
+}
+
+nav {
+    ul {
+        background-color: white;
+    }
+
+    li {
+        display: inline;
+    }
+    .cazzo{
+        background-color: red;
+    }
+}
+
+$nomeclasse: mio-box;
+$attributo: border;
+
+p.#{$nomeclasse} {
+    #{$attributo}-color: green;
+}
+
+@mixin applica_bordo($colore, $raggio) {
+
+}
+
+blockquote {
+  @include applica_bordo($colore_bordo, $raggio_bordo)
+}
+
+h1 {
+    @include bordo_verde()
+}

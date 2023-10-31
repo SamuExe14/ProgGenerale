@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid {
+            display: grid;
+            max-width: 100%;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr;
+            
+            overflow: scroll;
+        }
+
+        #grid > * {
+            border: 1px solid;
+            padding: 1rem;
+        }
+
+        #grid2 {
+            display: grid;
+            max-width: 100%;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr;
+            
+            overflow: scroll;
+        }
+
+        #grid2 > * {
+            border: 1px solid;
+            padding: 1rem;
+            min-width: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        <div>
+            <!-- nota bene il testo dentro tag pre non fa mai wrap
+            del suo contenitore 
+        l'overflow quando ridimensioni lo schermo è dovuto al fatto che le grid
+    nascono per dare più peso al contenitore piuttosto che al contenuto
+da un punto di vista prettamente tecnico succede che ogni grid item ha
+min-width e min-height impostati per defaulto su auto
+RICORDA SOLO MIN NON MAX
+-->
+            <pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</pre>
+        </div>
+        <div>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div id="grid2">
+        <div>
+            
+            <pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</pre>
+        </div>
+        <div>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+</body>
+
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduzione a Javascript</title>
+
+    <!-- <script type="text/javascript" src="miojavascript.js"></script> -->
+    <style>
+        p {
+            font-size: 50px;
+            background-color: rgb(100, 200, 6);
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hello by Javascript</p>
+
+    <script>
+        const paragraph = document.querySelector('p')
+        paragraph.addEventListener('click', updateMe)
+
+        function updateMe() {
+            let word = prompt('Please chamge me')
+            paragraph.textContent = 'Hello by ' + word;
+        }
+
+
+        /*
+            var myVar = 0
+            const myConst = 0
+            console.log(myConst)
+    
+            console.log(myVar)
+            myVar = 8
+            console.log(myVar)
+    
+            myVar = "addesso sono una stringa"
+            console.log(myVar)
+    
+            let myVariable = 0
+    
+            // ********************************* TipiSemicolons*********************************
+            let semi = 1; let colons = 2 // senza il ; avrei problemi
+    
+    
+            // ********************************* Tipi primitivi *********************************
+    
+            // numbers
+            const numberX = 10
+            console.log(numberX)
+    
+            let number = 1
+            console.log('number -> ', number)
+            number = 5.5
+            console.log('number -> ', number)
+            number = -33
+            console.log('number -> ', number) // occhio al console log in Safari che mostrs un - prima del log
+    
+            console.log('number -> 2', +2 * 2)
+    
+            // operazione con i numbers
+            //somma
+            number = 3 + 5
+            console.log('Somma number -> ', number)
+            //sottrazione
+            number = 8 - 1
+            console.log('Sottrazione number -> ', number)
+            //mooltiplicazione
+            number = 3 * 5
+            console.log('Moltiplicazione number -> ', number)
+            //divisione
+            number = 15 / 3
+            console.log('Divisione number -> ', number)
+            //potenza
+            number = 3 ** 2
+            console.log('Potenza number -> ', number)
+    
+            //modulo: resto della divisione per 2: molto utile in molte situazioni
+            number = 3 % 2
+            console.log('Modulo number -> ', number)
+    
+            //NaN Not a Number
+            //divisione
+            number = 0 / 0
+            console.log('Divisione number -> ', number)
+    
+            // parseInt
+            console.log('parseInt  -> ', parseInt("hello world"))
+    
+    
+            number = 3 * (2 + 1)
+            console.log('\tOperazioni con parentesi: number -> ', number)
+    
+            // null & undefined 
+            let xx
+            console.log('xx -> ', xx)
+    
+            let yy = null
+            console.log('yy -> ', yy)
+    
+    
+            // Confronti
+            // <, <=, >, >=
+    
+            // equality operators
+            // === checks for equality
+            // !== checks for inequality
+    
+    
+            // esistono anche 
+            // == checks for equality
+            // != checks for inequality
+    
+            //ma da preferire i primi due metodi
+    
+    
+    
+            // ********************************* I Boolean *********************************
+    
+            let isLoading = false
+            isLoading = !isLoading //(è un toggle)
+            if (isLoading) {
+                // mostra uno spinner
+                console.log('\tmostra uno spinner')
+            }
+    
+    
+            // ********************************* Stringhe *********************************
+    
+            let mioTesto1 = 'ciao sono una stringa'
+    
+            //oppure
+            let mioTesto2 = "ciao sono una stringa"
+    
+            // stessa cosa per stringhe classiche 
+            //ma se abbiamom l'apostrofo le cose cambiamo:
+    
+            //let text = 'L\' ecosistema ';
+            let text = "L’ ecosistema";
+            console.log(text);
+    */
+        /*
+        Cos'è meglio? backtick che vedremo dopo ma in generale la regola è
+        Se usiamo i doppi apici tutto è molto più semplice se siamo sul JS puro 
+        se usismo Framework o librerie terze allora è meglio usare 
+        i singoli apici.
+        */
+        /*
+
+        // Concatenazione di stringhe
+        let str = "Ciao" + " " + "Valentino"
+        console.log(str);
+
+        // oppure 
+
+        let myName = "Valentino"
+        let surname = "Romano"
+        let newStr = "Ciao " + myName + " " + surname;
+        console.log(newStr);
+
+        // Da stringhe a numeri e viceversa:
+
+        let num = 56;
+        let word = '56' + num;
+        console.log("word", word)
+
+        //let num2 = Number('56') + 56;
+        let num2 = parseInt('56') + 56;
+
+        console.log("num2", num2);
+
+        let word2 = '56' + num2;
+        console.log("word2", word2)
+
+
+        let num3 = 56;
+        console.log("num2", num3.toString());
+
+        let word3 = '56' + num3.toString();
+        console.log("word3", word3)
+
+        let num4 = parseInt('60') + 60;
+        console.log("num4", num4);
+
+        let word4 = '60' + num4;
+        console.log("word4", word4)
+
+        // Template literals
+
+        // concatenazione di stringhe con backtick
+        // possiamo andare a capo e fare tanto altro
+        let backtick = "utile"
+        let literals = `<h1>
+                    Hello backtick sei molto ${backtick}
+                </h1> `
+        console.log(literals);
+
+        //paragraph.append(literals)
+
+*/
+        // ********************************* Metodi Sulle Stringhe *********************************
+
+        //string in Js è un oggetto
+        let myStr = 'Hello world, javascript'
+        console.log('myStr', myStr)
+
+        // Lunghezza di una stringa
+        console.log('la lunghezza della stringa è:', myStr.length) //gli indici partono ad 0
+
+        // Selezione di un carattere di una stringa
+        console.log('myStr[0]:', myStr[0]) // prenderà la h perchè gli indici partono ad 0
+        console.log('myStr[6]:', myStr[6]) // prenderà la w do world
+        console.log('myStr[23]:', myStr[myStr.length - 1]) // Ultimo carattere perchè gli indici partono ad 0
+
+        // Selezionare una parte della stringa
+        console.log(myStr.indexOf('w'))// mi da l'indice esatto da dove inzia la parola world
+        console.log(myStr.indexOf('o'))// mi da l'indice esatto da dove inzia la parola world
+
+        let indexWorld = myStr.indexOf('world')
+        console.log('indexWorld ->', indexWorld)
+
+        console.log(myStr.slice(indexWorld))
+        // ritorna (stampa) la parte di stringa a partire dal index dato
+        let endWorld = myStr.indexOf('d')
+        console.log('endWorld ->', endWorld)
+        // stampa la parte di stringa a parte dal index e a finere sulla d di world ho preso tutta la parola world
+        console.log('myStr.slice', myStr.slice(indexWorld, endWorld + 1))
+
+
+        let myStrTest = 'Valentino Romano 48'
+        let startIndex = myStrTest.indexOf("R")
+        console.log('myStrTest.slice', myStrTest.slice(startIndex))
+
+        let endIndex = myStrTest.indexOf("48")
+        console.log('myStrTest.slice', myStrTest.slice(startIndex, endIndex - 1))
+
+
+
+        // stampa la parte di stringa a partire dal index e a finere sulla d di world ho preso tutta la parola world
+        console.log('myStrTest.slice', myStrTest.slice(startIndex, endIndex - 1))
+        console.log('myStrTest.substring', myStrTest.substring(startIndex, endIndex - 1))
+
+
+        // Case: toUpperCase/toLowerCase
+        console.log(myStr.toUpperCase());
+        console.log(myStr.toLowerCase());
+
+
+        // replace
+        console.log(myStr.replace('Hello', 'Ciao'));
+        /**/
+
+        // ********************************* Array *********************************
+
+        //Cos'è un array
+        let cities = 'Milao, Napoli, Catania, Roma';
+        let myArray = ['Milao', 'Napoli', 'Catania', 'Roma'];
+
+        // creiamo un array
+        let arrayOfNumber = [1, 2, 3, 4, 5];
+        console.log("arrayOfNumber: ", arrayOfNumber)
+
+        // lunghezza di una rray
+        console.log(arrayOfNumber.length)
+
+        // Accedere ai dati di un array
+        console.log(arrayOfNumber[0]);
+        console.log(arrayOfNumber[3]);
+        console.log(arrayOfNumber[4]);
+
+        console.log(arrayOfNumber[10]);
+
+        // Modifica dei dati di un array
+        arrayOfNumber[0] = 6;
+        console.log(arrayOfNumber[0]);
+        console.log(arrayOfNumber);
+
+        // Trova l'indice di un elemento di un array
+        //let myArray = ['Milao', 'Napoli', 'Catania', 'Roma'];
+
+        console.log(myArray.indexOf('Napoli'));
+
+
+        // Aggiungere o rimuovere eletti da un array;
+        console.log(myArray.push("New York")); // aggiunto in coda
+        console.log(myArray.push("New York")); // lo aggiunge nuovmante
+        console.log(myArray.push("Vienna", "Londra")); // aggiunti in coda
+        console.log(myArray);
+        console.log("**************************");
+
+        console.log(myArray.length);
+
+        myArray[10] = "Potenza"; // aggiunto ad una posizione specifica in coda perchè cosoco la lenght
+        console.log(myArray);
+        myArray[15] = "Potenza";// aggiunto ad una posizione specifica ma lasciadno vuoti 9 elementi 
+        console.log(myArray);
+        console.log(myArray.length)
+
+
+        // unshift() Aggiungere in testa un elemento ad un array
+        console.log(myArray.unshift("Arezzo"))
+        console.log(myArray)
+
+
+        // Rimuovere un elemento da una rray
+        // pop() rimuove e ritorna l'elemento appena eliminato
+
+        myArray.push('Palermo');
+        console.log('myArray', myArray)
+
+        let lastElemet = myArray.pop()
+        console.log('lastElemet', lastElemet)
+        console.log(myArray);
+
+        console.log(myArray.pop()); // rimosso dalla coda
+        console.log(myArray);
+
+
+        // shift() Rimuove e ritorna il primo elemnto di un array
+        console.log(myArray.shift());
+        console.log(myArray);
+
+
+
+        // Rimuovere un elemento specifico da una array attraverso l'indice
+        let indexOfCatania = myArray.indexOf('Catania');
+        console.log("indexOfCatania = ", indexOfCatania);
+        console.log(myArray.splice(indexOfCatania, 1)) // 1 indica quanti lementi volgio elminare: se non metto nulla elimnito tutto da Catania in poi
+        console.log(myArray);
+
+
+
+        // Convertire/creare un array da una stringa
+        // Sopra avefamo la stringa cities = 'Milao, Napoli, Catania, Roma'
+
+        let citiesArray = cities.split(', '); // attenzione ho inserito <, > la virgola e uno spazio
+        console.log('citiesArray  = ', citiesArray);
+
+        // Convertire/creare un array da una stringa
+        let citiesString = citiesArray.join(' : ');
+        console.log('citiesString  = ', citiesString);
+
+        let strTest = 'io - sono - un  - developer - iOs'
+        let arrayTest = strTest.split(' - ')
+        console.log('arrayTest  = ', arrayTest);
+        arrayTest.pop();
+        console.log('arrayTest  = ', arrayTest);
+
+        strTest = arrayTest.join(' ')
+        console.log('strTest  = ', strTest);
+
+        // Ci sarebbero ancora molte altre funzionio da vedere sugli Array ma lo faremo più in la
+
+
+        // ********************************* Flow control *********************************
+        // if else condizionale 
+        let temp = -2
+        let umnidita = 90
+
+        if (temp <= 18 && umnidita < 99) {
+            console.log(' fa freddo')
+        } else {
+            console.log('Temperatura acccettabile')
+        }
+        // oppure portebbero essere else if infiniti che non va bene in realtà ma è cosi
+        // vedremo quacosa di meglio in seguito
+        if (temp < 0) {
+            console.log('Fa molto freddo')
+        } else if (temp < 18) {
+            console.log('Fa  freddo')
+        } else {
+            console.log('Temoeratura acccettabile')
+        }
+
+        // ********************************* Operatori comparativi *********************************
+        // <, <=,  >, >=, ==, !=, === or !== che controlla anche il tipo(vedi es:*)
+
+        // Operator modulo % 
+        if (temp % 2 == 0) { // sto chiedendo se il numero è pario in pratica ovvero che ilresto della diviasione per 2 da un resto oppure no
+            console.log('nessu resto della diviosne allora è pari')
+        }
+        else {
+            console.log('è dispari')
+        }
+
+
+        // ********************************* Operatori logici AND OR & NOT *********************************
+        // &&, || !
+        let tempX = 21
+        if (tempX > 20 || tempX % 2 == 0) { // sto chiedendo se il numero è pario in pratica ovvero che ilresto della diviasione per 2 da un resto oppure no
+            console.log('OK')
+        }
+        else {
+            console.log('NOT OK')
+        }
+
+        // ********************************* Switch *********************************
+
+        // Se abbiamo una serie di if else if allora è meglio utilizzare
+        // uno switch che ci permette di scrivere del codice più semplice e leggibiile
+        switch (temp) {
+            case 10:
+                console.log('temp è 10 gradi: fa freddo');
+                break; // serve a stoppare il codice appena trovato il caso specifico
+            case 20:
+                console.log('temp è 20 gradi: ottima temp');
+                break;
+            case 30:
+                console.log('temp è 30 gradi: fa caldo');
+                break;
+            case 40:
+                console.log('temp è 40 gradi: fa molto caldo');
+                break;
+            default: // se nessuna dei casi sopra è coperto allora avremo iun valore di default
+                console.log(`Temp è ${temp} gradi`)
+        }
+
+
+
+        // ********************* Operatore ternario *********************
+        // Lo useremo molto in seguito soratutto su Angular
+
+        let wheather = temp < 15 ? "fa freddo" : "fa caldo";
+        console.log(`Wheather: ${wheather}`);
+
+        /*
+        Loop
+        I loop sono una delle principali strutture di controllo di JavaScript.
+        Grazie a un loop è possibile automatizzare e ripetere l'esecuzione 
+        di un blocco di codice un numero qualsiasi di volte, anche indefinitamente.
+        JavaScript offre vari modi di eseguire iterazioni attraverso i loop. 
+        Mi concentrerò su questi 3 loop:
+        - while loop 
+        - for loop 
+        - for..of
+        */
+
+        // while è la struttura più semplice che JavaScript ci offre.
+        //Aggiungiamo una condizione dopo la keyword while 
+        //e un blocco di codice che verrà eseguito finché la condizione è true.
+
+        //Esempio:
+        console.log('\n Start While')
+
+        let i = 0;
+        const list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+        console.log(list[0]) // a
+        console.log(list[1]) // b
+        console.log(list[2]) // c
+        console.log(list[3]) // d
+        console.log(list[4]) // e
+        console.log(list[5]) // f
+        console.log(list[6]) // g
+        console.log(list[7]) // h
+
+        //console.log(`\t list[${i}] = ${list[i]}`)
+        //let i = 0;
+        while (i < list.length) {
+            console.log(`\t list[${i}] = ${list[i]}`)
+            i = i + 1;
+        }
+
+        //Puoi interrompere il loop while usando la keyword break, in questo modo:
+        console.log('while-break')
+        let index = 0;
+        while (index < list.length) {
+            console.log(`\t list[${index}] = ${list[index]}`)
+            if (list[index] === 'b') {
+                console.log(`\t mi fermo qui list[${index}] = ${list[index]}`)
+                break;
+            }
+            index += 1;
+        }
+
+
+        //Utilizziamo la keyword for e aggiungiamo un set di 3 istruzioni: 
+        // l'inizializzazione, la condizione e l'aggiornamento delle variabili.
+        //Esempio:
+        console.log('\n Start for')
+
+        console.log('for')
+        for (let index = 0; index < list.length; index++) {
+            console.log(`\t list[${index}] = ${list[index]}`)
+        }
+
+
+        //for...of
+        //Questo loop è relativamente recente(è stato introdotto nel 2015) 
+        //ed è una versione semplificata del loop for:
+        console.log('\n Start for-of')
+
+        for (const user of list) {
+            console.log('\t user = ', user)
+        }
+
+
+        // esericizio data una stringa come questa eliminare dev e javascript
+        let myStrigTest = "io amo i dev di Javascript";
+
+        let myStartIndex = myStrigTest.indexOf('dev')
+        console.log("myStartIndex", myStartIndex)
+
+        let myMiddleIndex = myStrigTest.indexOf('di')
+        console.log("myMiddleIndex", myMiddleIndex)
+
+        let myEndIndex = myStrigTest.indexOf('Javascript')
+        console.log("myEndIndex", myEndIndex)
+
+        let dev = myStrigTest.slice(myStartIndex, myMiddleIndex)
+        let js = myStrigTest.slice(myEndIndex)
+
+        console.log("dev = ", dev)
+        console.log("js = ", js)
+
+        let newString = myStrigTest.replace(dev, "")
+        let lastString = myStrigTest.replace(js, "")
+        console.log("newString = ", newString)
+        console.log("lastString = ", lastString)
+
+
+        // soluzione semplice
+        let repalcedStr1 = myStrigTest.replace("dev", "")
+        let repalcedStr = repalcedStr1.replace("Javascript", "")
+        console.log("repalcedStr = ", repalcedStr)
+
+        let ssttrr = "ciao" + "dev"
+        console.log("ssttrr = ", ssttrr)
+
+
+
+    </script>
+</body>
+
+</html>

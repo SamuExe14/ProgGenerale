@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* Per definire una griglia usa display:grid o display:inline-grid sull'elemento padre.
+ È quindi possibile creare una griglia utilizzando le proprietà grid-template-columns e grid-template-rows.
+
+Sto usando la proprietà grid-gap per creare uno spazio tra le mie colonne e le righe di 10px. 
+Questa proprietà è una scorciatoia per grid-column-gap e grid-row-gap in modo da poter impostare questi valori individualmente.
+
+Tutti i figli diretti del genitore ora diventano elementi della griglia e l'algoritmo di posizionamento automatico li dispone, 
+uno in ogni cella della griglia. smanetta e aggiungi cambiando dati su grid-template-columns/rows. */
+.wrapper {
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
+  row-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: darkorange;
+  border: 1px solid blue;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">D</div>
+        <div class="box e">E</div>
+        <div class="box f">F</div>
+      </div>
+</body>
+</html>

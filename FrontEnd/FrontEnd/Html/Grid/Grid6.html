@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .griglia {
+            display: grid;
+            grid-template-columns: 200px 200px 200px 200px;
+            gap: 10px;
+            grid-template-areas: ". header header" "sidebar content content" "footer . . "; 
+        } 
+
+        .sidebar {
+            grid-area: sidebar;
+
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+        .box {
+            background-color: darkorange;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="griglia">
+        <div class="box header">Suca</div>
+        <div class="box sidebar">Suca</div>
+        <div class="box content">Suca</div>
+        <div class="box footer">Suca</div>
+    </div>
+</body>
+
+</html>

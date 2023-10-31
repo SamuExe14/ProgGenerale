@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        nav {
+            background-color: lightgrey;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            padding: 20px 20px;
+        }
+
+        nav ul li:hover {
+            text-decoration: none;
+            background-color: mediumpurple;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .bottone {
+                        cursor: pointer;
+                        display: none;
+                        float: left;
+
+                    }
+
+
+        @media screen and (max-width: 800px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul.myNav {
+                display: flex;
+
+            }
+        }
+ 
+        @media screen and (max-width: 900px) {
+            .bottone {
+
+                cursor: pointer;
+                float: left;
+                background-color: transparent;
+                border: 10px;
+                margin-left: 32px;
+                display: block;
+            }
+            nav ul{
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <button class="bottone" id="mioBottone">
+            <i class="fa fa-bars"></i>
+        </button>
+        <ul id="myNav">
+            <li><a href="#">link1</a></li>
+            <li><a href="#">link2</a></li>
+            <li><a href="#">link3</a></li>
+            <li><a href="#">link4</a></li>
+        </ul>
+    </nav>
+
+
+    <script>
+        const button = document.getElementById("mioBottone")
+        const nav = document.getElementById("myNav")
+
+        button.addEventListener("click", () => {
+            nav.classList.toggle("show")
+        })
+    </script>
+</body>
+
+</html>

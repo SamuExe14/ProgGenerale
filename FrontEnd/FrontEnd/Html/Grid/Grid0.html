@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns:min-content min-content min-content min-content;
+            background-color: beige;
+            gap: 10px 10px;
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-rows: 150px 150px 150px 150px;
+            gap: 10px 10px;
+        }
+
+        .box {
+            background-color: brown;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="grid">
+
+        <div class="box">Elemento 1</div>
+        <div class="box">Elemento 2</div>
+        <div class="box">Elemento 3</div>
+        <div class="box">Elemento 4</div>
+
+    </div>
+
+    <div class="grid2">
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+    </div>
+</body>
+
+</html>

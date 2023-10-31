@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .flex_container {
+
+            display: flex;
+            background-color: aqua;
+            align-items: flex-start;
+            border: 2px solid orange;
+        }
+
+        .flex_container > p {
+            width: 200px;
+            margin: 10px;
+            background-color: blanchedalmond;
+            border: 1px solid black;
+        }
+
+        .item_grande {
+            flex-basis: 300px;
+        }
+
+        .item_piccolo {
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex_container">
+        <p> PRIMO PARAGRAFO: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum repudiandae optio modi cupiditate sed excepturi officiis sequi aut, quaerat rem!</p>
+        <p> SECONDO PARAGRAFO: Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, earum impedit quam itaque cumque dolore ducimus natus. Vero odio eos accusamus! Dolores nobis hic eveniet sunt ipsam aut dignissimos vitae? </p>
+        
+        <p class="item_grande">questo non puo andare oltre i 300 px</p>
+        <p class="item_piccolo">questo non deve andare oltre i 100 px</p>
+    </div>
+</body>
+</html>

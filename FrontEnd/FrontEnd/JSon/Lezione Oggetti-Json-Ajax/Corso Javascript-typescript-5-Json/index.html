@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduzione a Javascript</title>
+
+</head>
+
+<body>
+
+    <h1>Hello devs</h1>
+    <div id="demo">Qui vedrai i tuoi dati Json</div>
+
+    <script>
+
+        // ********** Json *********
+        //creiamo un oggetto Javascript
+        const user = {
+            name: "Valentino",
+            surname: "Romano",
+            age: 47
+        };
+
+        // vediamo il metodo stringify
+        let userJson = JSON.stringify(user);
+        console.log("Stringify (mi crea un JSON)= " + userJson);
+        // abbiamo trasformato il nostro aggetto in un Json
+
+        // se adesso volessi fare la cosa al contrario potrei fare:
+        // prendo un oggetto Json e lo parso con JSON.parse
+        let userObjParse = JSON.parse('{"name":"valentino","surname":"romano","age":46}');
+        console.log('Obj: userObjParse =', userObjParse);
+
+        // ma se partiamo dal nostro oggetto userJson modifcato con strigfy allora:
+        const userObj = JSON.parse(userJson);
+        console.log('Obj: userObj =', userObj);
+        console.log('Obj: userObj.name =', userObj.name);
+        console.log('Obj: userObj.name =', userObj['name']);
+
+
+        // postiamo a video
+        //document.getElementById("demo").innerHTML = `${userObj.name} ${userObj.surname} , ${userObj.age} anni`
+        demo.innerHTML = `${userObj.name} ${userObj.surname} , ${userObj.age} anni`
+        // Prossimo passo Ajax e le request
+
+    </script>
+</body>
+
+</html>

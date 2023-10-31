@@ -1,0 +1,38 @@
+//! COME LAVORA IL SASS
+//*
+//* Sass ( Sintactically Awesome Style Sheets) trasforma un file sorgente che usa la sintassi Sass in CSS che può essere immediatamente usato in una pagina web
+//* I file sorgenti Sass usano l'estensione .scss che è l'abbrevazione di Sassy CSS
+//* Dopo essere stato compilato, il file .scss genera un file CSS
+//? Linkare un file HTML al file .scss non farà funzionare la tua pagina. Il browser non conosce il SASS
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*
+//*

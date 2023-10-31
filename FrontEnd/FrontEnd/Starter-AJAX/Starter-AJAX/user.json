@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "name": "Valentino Romano",
+    "age": "46",
+    "email": "vr@eht.biz",
+    "pets": [
+        "cat",
+        "dog"
+    ]
+}

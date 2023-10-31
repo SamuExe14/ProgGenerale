@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+
+            background-color: darkorange;
+            border: 1px solid blue;
+            border-radius: 5px;
+            color: whitesmoke;
+            padding: 10px;
+            text-overflow: ellipsis;
+        }
+
+        .griglia {
+
+            display: grid;
+            grid-template-columns: 250px 150px 300px;
+            grid-template-rows: 250px 40px;
+            gap: 10px;
+        }
+
+        .griglia1 {
+
+            display: grid;
+            grid-template-columns: 150px auto;
+            grid-template-rows: 70px 70px;
+            gap: 10px;
+        }
+
+        .griglia2 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 50px;
+            gap: 10px;
+        }
+
+        .griglia3 {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: 70px;
+            gap: 10px;
+        }
+
+        .griglia4 {
+            display: grid;
+            grid-template-columns: min-content 2fr;
+            grid-template-rows: 70px;
+            gap: 10px;
+        }
+
+        .griglia5 {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            grid-template-rows: 1fr 0.4fr;
+            gap: 10px;
+        }
+
+        .griglia6 {
+            display: grid;
+            grid-template-columns: fit-content(300px) fit-content(300px) 1fr;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Griglia 1</h2>
+    <div class="griglia">
+        <div class="box">a</div>
+        <div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum neque ullam ipsum assumenda ea
+            eaque alias accusamus odit qui? Nisi voluptates laborum rerum deserunt rem minus explicabo eveniet obcaecati
+            ut.</div>
+        <div class="box"></div>
+        <div class="box">d</div>
+    </div>
+
+    <h2>Griglia 2</h2>
+    <div class="griglia1">
+        <div class="box">a</div>
+        <div class="box">b</div>
+        <div class="box">c</div>
+        <div class="box">d</div>
+    </div>
+
+    <h2>Griglia 3 auto</h2>
+    <div class="griglia2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <h2>Griglia 4 auto 1fr</h2>
+    <div class="griglia3">
+        <div class="box">auto si calibra sul contenuto</div>
+        <div class="box">1 fr</div>
+        <div class="box">auto</div>
+    </div>
+
+    <h2>Griglia 5 con due colonne : min-content 2 fr</h2>
+    <div class="griglia4">
+        <div class="box">colonna1 supercalifragili</div>
+        <div class="box">colonna fr</div>
+    </div>
+
+    <h2>Griglia 6 con due colonne: max-content 1fr</h2>
+    <div class="griglia5">
+        <div class="box">allargarti in base al contenuto ma rispetta i 700px</div>
+        <div class="box">allargarti in base al contenuto ma rispetta i 700px Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Sed, dolorum unde officiis in voluptatum a quae accusantium laborum maiores saepe maxime
+            quidem voluptatibus possimus ea excepturi dicta officia soluta molestiae iste eos veritatis ullam. Odit,
+            voluptate ab consequatur quia aliquam, possimus ad impedit exercitationem voluptatibus ducimus doloribus
+            deserunt unde tempora tenetur itaque reprehenderit est voluptatum earum aut quos assumenda sint, facilis
+            laborum. Omnis magnam, doloremque veniam ipsam numquam nesciunt dignissimos labore, ad nobis saepe commodi
+            repellendus quod laboriosam eius a voluptates alias iusto dicta sapiente aperiam voluptatum inventore
+            corporis tempora asperiores. Quidem explicabo quo officia, obcaecati repellendus eligendi dignissimos nam!
+        </div>
+        <div class="box">colonna con unità di misura in fr</div>
+    </div>
+
+    <h2>Griglia 7 con 2 colonne: 2 fillContent con misura ed 1fr</h2>
+    <div class="griglia6">
+        <div class="box">allargarti in base al contenuto ma max dentro le misure indicate</div>
+        <div class="box">allargarti in base al contenuto ma rispetta le misure max indicate Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Sed, dolorum unde officiis in voluptatum a quae accusantium laborum maiores
+            saepe maxime quidem voluptatibus possimus ea excepturi dicta officia soluta molestiae iste eos veritatis
+            ullam. Odit, voluptate ab consequatur quia aliquam, possimus ad impedit exercitationem voluptatibus ducimus
+            doloribus deserunt unde tempora tenetur itaque reprehenderit est voluptatum earum aut quos assumenda sint,
+            facilis laborum. Omnis magnam, doloremque veniam ipsam numquam nesciunt dignissimos labore, ad nobis saepe
+            commodi repellendus quod laboriosam eius a voluptates alias iusto dicta sapiente aperiam voluptatum
+            inventore corporis tempora asperiores. Quidem explicabo quo officia, obcaecati repellendus eligendi
+            dignissimos nam!</div>
+        <div class="box">colonna con unità di misura in fr</div>
+    </div>
+</body>
+
+</html>

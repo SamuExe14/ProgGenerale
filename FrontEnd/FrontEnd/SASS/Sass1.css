@@ -1,0 +1,36 @@
+body {
+  background-color: grey;
+  color: beige;
+}
+
+h1 {
+  background-color: orange;
+  color: blue;
+  text-align: center;
+}
+
+.paragrafo1 {
+  border: 4px double black;
+  padding: 30px;
+}
+
+.paragrafo2 {
+  border: 1px solid violet;
+  padding: 40px;
+  color: rgba(120, 0, 120, 0.5);
+}
+
+nav ul {
+  background-color: white;
+}
+nav li {
+  display: inline;
+}
+nav .cazzo {
+  background-color: red;
+}
+
+p.mio-box {
+  border-color: green;
+}/*# sourceMappingURL=Sass1.css.map */
+

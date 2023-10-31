@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        section  {
+            display: flex;
+            background-color: aquamarine;
+            max-width: 780px;
+        }
+
+        .colonna {
+            background-color:chocolate;
+            color: white;
+            margin: 10px;
+            flex-shrink: 1; /*possibilia di ridursi*/
+            flex-grow: 1; /*possibilita di crescere*/
+            border: 1px solid black;
+            /* flex-basis: auto; */
+        }
+
+        .colonna2 {
+            background-color:burlywood;
+            color: white;
+            margin: 10px;
+            flex-shrink: 1; /*possibilia di ridursi*/
+            flex-grow: 1; /*possibilita di crescere*/
+            border: 1px solid black;
+            flex-basis: 1;
+        }
+
+        .colonna2:first-of-type {
+            background-color:burlywood;
+            color: white;
+            margin: 10px;
+            flex-shrink: 2; /*possibilia di ridursi*/
+            flex-grow: 2; /*possibilita di crescere*/
+            border: 1px solid black;
+            flex-basis: 1;
+        }
+
+        .colonnaProporzionale {
+            background-color:burlywood;
+            color: white;
+            margin: 10px;
+            flex-shrink: 1; /*possibilia di ridursi*/
+            flex-grow: 1; /*possibilita di crescere*/
+            border: 1px solid black;
+            flex-basis: 1;
+        }
+
+        section:nth-child(4) .colonnaProporzionale:first-of-type{ /* quando incontri la 4 section il primo elemento avera queste caratteristice */
+            flex-grow: 2;
+            flex-shrink: 2;
+            flex-basis: 22px; /*quali sono le tue dimensioni ideali?*/
+        }
+
+        section:nth-child(6) .colonnaProporzionale:nth-of-type(2){
+            flex-grow: 4;
+            flex-shrink: 4;
+            flex-basis: 66px; /*quali sono le tue dimensioni ideali?*/
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section>
+        <div class="colonna">prima</div>
+        <div class="colonna">seconda</div>
+        <div class="colonna">terza</div>
+    </section>
+
+    <section>
+        <div class="colonna2"> <b>prima Section colornna2  </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, numquam!</div>
+        <div class="colonna2">seconda Lorem, ipsum dolor.</div>
+        <div class="colonna2">terza Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fuga sequi? Laborum perferendis ipsam illo corporis odit similique, unde nobis architecto excepturi cum earum perspiciatis ipsa, fugit magnam sit laboriosam?</div>
+    </section>
+
+    <section>
+        <div class="colonna2"> <b>seconda Section colornna2  </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, numquam!</div>
+        <div class="colonna2">seconda Lorem, ipsum dolor.</div>
+        
+    </section>
+
+    <section>
+        <div class="colonnaProporzionale">un terzo</div>
+        <div class="colonnaProporzionale">un terzo</div>
+        <div class="colonnaProporzionale">un terzo</div>
+    </section>
+
+    <section>
+        <div class="colonnaProporzionale">un mezzo</div>
+        <div class="colonnaProporzionale">un mezzp</div>
+        
+    </section>
+
+    <section>
+        <div class="colonnaProporzionale">un quarto</div>
+        <div class="colonnaProporzionale">un quarto</div>
+        <div class="colonnaProporzionale">un quarto</div>
+        <div class="colonnaProporzionale">un quarto</div>
+    </section>
+
+    <section>
+        <div class="colonnaProporzionale">un sesto</div>
+        <div class="colonnaProporzionale">un sesto</div>
+        <div class="colonnaProporzionale">un sesto</div>
+        <div class="colonnaProporzionale">un sesto</div>
+        <div class="colonnaProporzionale">un sesto</div>
+        <div class="colonnaProporzionale">un sesto</div>
+    </section>
+
+</body>
+</html>

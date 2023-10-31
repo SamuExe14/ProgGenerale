@@ -1,0 +1,11 @@
+//! operatore & per creare classi che condividono un pezzo di nome
+
+.contenitore {
+    max-width: 800px;
+
+    &-medio { max-width: 600px;}
+
+    &-piccolo { max-width: 400px; }
+
+    &-piccolissimo { max-width: 250px ; }
+}

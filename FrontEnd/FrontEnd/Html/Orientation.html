@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+        }
+        
+        div {
+            background-color: brown;
+        }
+
+        @media (orientation: portrait) {
+            body {
+                flex-direction: column;
+                
+
+            }
+
+            div {
+                background-color: chocolate;
+            }
+        }
+
+        @media (orientation: landscape) {
+
+            body {
+                flex-direction: row;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>primo</div>
+    <div>secondo</div>
+    <div>terzo</div>
+    <div>quarto</div>
+    <div>quinto</div>
+</body>
+
+</html>

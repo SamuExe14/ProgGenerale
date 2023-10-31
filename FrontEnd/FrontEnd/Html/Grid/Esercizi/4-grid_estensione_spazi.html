@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-gap: 15px;
+            background-color: #fff;
+            color: #444;
+        }
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid blue;
+            color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 150%;
+        }
+        /* definisico per righe e colonne row start e row end , column start e column end */
+        .a {
+            /* se aumento a dismisura il valore di column-end andrò comunque
+            ad estendere il grid item
+            tieni sempre presente :il modello grid è molto orientato al contenitore */
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .b {
+            grid-column: 3;
+            grid-row: 1 / 3;
+        }
+
+        .c {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .d {
+            grid-column: 2;
+            grid-row: 2;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <img src="images/gridlines.png" alt="">
+    <div class="wrapper">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">D</div>
+        <div class="box e">E</div>
+        <div class="box f">F</div>
+</body>
+
+</html>

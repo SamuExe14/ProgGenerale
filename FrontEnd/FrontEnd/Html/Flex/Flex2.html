@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            display: flex;
+            border: 4px solid darkgoldenrod;
+            width: auto;
+            height: auto;
+            justify-content: flex-start;
+            /* justify-content: center; */
+            justify-content: first baseline;
+            margin: 10px 30px auto auto;
+
+        }
+
+        img {
+            border: 5px solid black;
+            margin: 10px;
+
+        }
+
+        #column {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            text-overflow: clip;
+            margin: 10px 40px 30px 30px;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: flex-end;
+            border: 2px solid black;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        a {
+            display: flex;
+            text-decoration: none;
+            margin: 20px 20px auto auto;
+            justify-content: flex-end;
+        }
+
+        img:nth-child(5){
+            -ms-flex-order:  ;
+        }
+
+        img:nth-child(3){
+            order: 2;
+        }
+
+        
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>I limoni Signora</h1>
+    
+    <ul>
+        <li><a href="">Stocazzo</a></li>
+        <li><a href="">Stocazzo</a></li>
+        <li><a href="">Stocazzo</a></li>
+        <li><a href="">Stocazzo</a></li>
+    </ul>
+
+    <div>
+        <img src="../images/orange.png" alt="">
+        <img src="../images/peach.png" alt="">
+        <img src="../images/potato.png" alt="">
+        <img src="../images/strawberry.png" alt="">
+        <img src="../images/tomato.png" alt="">
+        <img src="../images/watermelon.png" alt="">
+        <img src="../images/lemon.png" alt="">
+        <img src="../images/orange.png" alt="">
+    </div>
+
+    <div id="column">
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas provident, iure assumenda labore eum
+            voluptatibus facere nulla reiciendis ex odio ab hic aperiam accusamus, nam quod, sapiente eos inventore!</p>
+    </div>
+    <span></span>
+
+</body>
+
+</html>

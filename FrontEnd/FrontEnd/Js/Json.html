@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    const user = {
+        name : "Samuele",
+        surname : "Leonardi"
+    }
+
+    let userJson = JSON.stringify(user)//stringify serve per convertire da javascript a json
+    console.log(userJson)
+
+    let userobjJson = JSON.parse(userJson)//parse serve per convertire da json a javascript
+    console.log(userobjJson)
+
+</script>
+</body>
+
+</html>

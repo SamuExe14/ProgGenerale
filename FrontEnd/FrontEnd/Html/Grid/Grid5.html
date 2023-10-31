@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .griglia {
+            display: grid;
+            width: 900px;
+            grid-template-columns: 300px 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .griglia1 {
+            display: grid;
+            width: 900px;
+            grid-template-columns: 300px minmax(150px, 450px) 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .griglia2 {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .griglia3 {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr auto;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .griglia4 {
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .griglia5 {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .griglia6 {
+            display: grid;
+            grid-template-columns: fit-content(700px) fit-content(700px) 1fr;
+            gap: 10px;
+        }
+
+        .box {
+            background-color: darkorange;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Griglia</h1>
+    <div class="griglia ">
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia culpa dolor, sit dolore
+            eligendi at quasi ab, molestias a tempore iusto itaque excepturi inventore nihil, laboriosam eaque.
+            Doloribus, nam unde?</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+
+    </div>
+
+    <h2>Griglia 2 con minmax(150px, 450px)</h2>
+    <div class="griglia1">
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia culpa dolor, sit dolore
+            eligendi at quasi ab, molestias a tempore iusto itaque excepturi inventore nihil, laboriosam eaque.
+            Doloribus, nam unde?</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+    </div>
+
+    <h2>Griglia con repeat (4 , auto)</h2>
+    <div class="griglia2">
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia culpa dolor, sit dolore
+            eligendi at quasi ab, molestias a tempore iusto itaque excepturi inventore nihil, laboriosam eaque.
+            Doloribus, nam unde?</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+        <div class="box">Ciao</div>
+    </div>
+    <h2>Griglia 4 con min-content 1fr</h2>
+    <div class="griglia4">
+
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+
+    </div>
+    <h2>Griglia 5 con max-content 1fr</h2>
+    <div class="griglia5">
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+        <div class="box">Si ciao beddu, ammucchiti bellu arancinu sciamunitazzu</div>
+    </div>
+
+    <div class="griglia6">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+
+    </div>
+
+</body>
+
+</html>
