@@ -13,7 +13,7 @@ int main()
     {
         puts("Enter the gallons used (-1 to end): ");
         scanf("%f", &gallons);
-        
+
         if (gallons != -1)
         {
             puts("Enter the miles driven: ");
@@ -26,7 +26,6 @@ int main()
 
             counter += miles_gallons;
         }
-        
     }
     average = counter / iterator;
     printf("The overall average miles/gallon was %.2f", average);

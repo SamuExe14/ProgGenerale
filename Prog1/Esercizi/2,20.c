@@ -2,15 +2,15 @@
 #include <math.h>
 #include <stdlib.h>
 
-
-int main (){
+int main()
+{
     float raggio;
     float pi = 3.14159;
-    
+
     puts("Inserire il raggio del cerchio");
     scanf("%f", &raggio);
 
-    float area = pow(raggio,2) * pi;
+    float area = pow(raggio, 2) * pi;
     printf("L'area del cerchio è %.2f cm\n", area);
 
     float circonferenza = (2 * pi) * raggio;
@@ -19,5 +19,3 @@ int main (){
     float diametro = raggio * 2;
     printf("Il diametro del cerchio è %.2f cm\n", diametro);
 }
-
-
