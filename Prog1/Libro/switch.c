@@ -48,7 +48,7 @@ int main(int)
             break;
 
         default: //? Viene mostrato un messaggio d'errore nel caso in cui venga immesso un carattere che non è all'interno dei case;
-            puts("Incorrect letter grade entered");
+            puts("Incorrect letter grade entered"); //! E' buon uso porre l'istruzione di default per ultima. Per questo motivo non è necessaria l'istruzione break 
             puts("Enter a new grade");
             break;
         }
