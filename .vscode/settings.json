@@ -7,5 +7,6 @@
     "C_Cpp.default.includePath": [
         "${workspaceFolder}/**"
     ],
-    "terminal.explorerKind": "external"
+    "terminal.explorerKind": "integrated",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono'"
 }
