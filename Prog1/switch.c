@@ -53,10 +53,11 @@ int main(int)
             break;
         }
     }
-//? Dopo aver immesso il carattere di EOF vengono stampati tutti i dati fin'ora registrati, ma a me ovviamente non funziona ;) lol.
-    printf("A: %u", aCount);
-    printf("B: %u", bCount);
-    printf("C: %u", cCount);
-    printf("D: %u", dCount);
-    printf("F: %u", fCount);
+//? Dopo aver immesso il carattere di EOF (CTRL + D su linux )vengono stampati tutti i dati fin'ora registrati, ma a me ovviamente non funziona ;) lol.
+    puts("Total for each letters grade are:");
+    printf("A: %u\n", aCount);
+    printf("B: %u\n", bCount);
+    printf("C: %u\n", cCount);
+    printf("D: %u\n", dCount);
+    printf("F: %u\n", fCount);
 }
