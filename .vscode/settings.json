@@ -8,5 +8,5 @@
         "${workspaceFolder}/**"
     ],
     "terminal.explorerKind": "integrated",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono'"
+    "terminal.integrated.allowChords": false
 }
