@@ -1,24 +1,28 @@
 #include <stdio.h>
 
-int maximum(int x, int y,int z){
-     int max;
+int maximum(int x, int y, int z)
+{
+     int max = x;
 
-     if(x > y){
-          max = x;
-     } else if ( y > x){
+     if (y > max)
+     {
           max = y;
-     } else if (z > y){
+     }
+     
+     if (z > max)
+     {
           max = z;
      };
-     
+
      return max;
 }
 
-int main(){
+int main()
+{
      int int1, int2, int3;
 
-     printf ("Insert three integer: \n");
-     scanf ("%d%d%d", &int1, &int2, &int3);
-     
-     printf("The meximum is %d", maximum(int1, int2, int3));
+     printf("Insert three integer: \n");
+     scanf("%d%d%d", &int1, &int2, &int3);
+
+     printf("The maximum is %d", maximum(int1, int2, int3));
 }
