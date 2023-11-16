@@ -1,3 +1,4 @@
+//? CALCOLO DEL FATTORIALE
 #include <stdio.h>
 
 int main (){
@@ -9,6 +10,6 @@ int main (){
 
      for (int i = 1; i <= input; ++i){
           fattoriale *= i;
-          printf("Il fattoriale di 5 è: %lld\n", fattoriale);
+          printf("Il fattoriale di %d è: %lld\n",input, fattoriale);
      }
 }
