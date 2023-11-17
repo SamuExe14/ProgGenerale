@@ -1,7 +1,3 @@
-tempCodeRunnerFile*
-!*.c
-/myApp
-/myProject
+!{Prog1}/*
 .prettierrc
-/angular-service-app
-/angular-input-content-proj-app
+/Angular
