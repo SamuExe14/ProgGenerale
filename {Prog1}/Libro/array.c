@@ -49,4 +49,14 @@ int main()
      // }
 
      printf("%s", array0); // --> equivalente al ciclo for scritto sopra
+//-----------------------------------------------------------------------------------//
+     static int arrayX[34]; //!--> Inizializza un array statico che esiste per tutta la durata del programma a differenza
+                              //!  di un array automatico che ogni volta che viene chiamata una funzione viene inizializzato di nuovo
+                              
+     modifyArray(array, arraySize); //-> passaggio di un array a una chiamata di funzione
+     
+     void modifyArray (int b[], int bSize); //? --> Si usa la seguente sintassi per far ricevere un array all'inizializzazione di una funzione
+
+     const array[40]; //-> per rendere l'array costante nel tempo e non permettere a una funzione di modificare i suoi elementi
 }
+
