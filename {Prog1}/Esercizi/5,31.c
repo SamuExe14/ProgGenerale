@@ -5,22 +5,27 @@
 int flip()
 {
      int j;
+     srand(time(NULL));
 
+     int headCounter = 0;
+     int tailCounter = 0;
      for (int i = 0; i <= 100; ++i)
      {
-          srand(time(NULL));
-
-          j = rand() % 1;
+          j = rand() % 2;
 
           if (j == 0)
           {
-               puts("Croce");
+               tailCounter++;
+               puts("Tail");
           }
           else if (j == 1)
           {
-               puts("Testa");
+               headCounter++;
+               puts("Head");
           }
      }
+     printf("E' stata lanciata %d volte croce\n", tailCounter);
+     printf("E' stata lanciata %d volte testa\n", headCounter);
 }
 
 int main()
