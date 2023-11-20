@@ -11,7 +11,7 @@ int main()
     scanf("%f", &raggio);
 
     float area = pow(raggio, 2) * pi;
-    printf("L'area del cerchio è %.2f cm\n", area);
+    printf("L'area del cerchio è %.2f cm²\n", area);
 
     float circonferenza = (2 * pi) * raggio;
     printf("La circonferenza è %.2f cm\n", circonferenza);
