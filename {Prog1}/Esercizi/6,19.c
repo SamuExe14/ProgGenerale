@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define SIZE 12
 
-int lancioDadi(int dado1, int dado2)
+int lancioDadi(int dado1, int dado2, int risultato, int array[])
 {
-     dado1 = 1 + rand() % 6;
-     dado2 = 1 + (rand() % 6);
-
+     srand(time(NULL));
+     for (int x = 0; x <= 36000; ++x)
+     {
+          dado1 = 1 + rand() % 6;
+          dado2 = 1 + (rand() % 6);
+          risultato = dado1 + dado2;
+          ++array[risultato];
+     }
      return dado1 + dado2;
 }
 
@@ -25,11 +31,8 @@ int main()
      int dado1, dado2;
      int risultato;
 
-     for (int i = 0; i <= 36000; ++i)
-     {
-          risultato = lancioDadi(dado1, dado2);
-          ++arrayDadi[risultato];
-     }
+     lancioDadi(dado1, dado2, risultato, arrayDadi);
+
      printIndex();
      puts("");
      for (int j = 2; j <= SIZE; ++j)
