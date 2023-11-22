@@ -30,13 +30,13 @@ int main()
 
      char classe;
 
-     static int arrayPosti[9] = {0};
+     static int arrayPosti[10] = {0};
      int posto;
 
-     for (int i = 0; i < 9; i++)
+     for (int i = 0; i < 10; i++)
      {
-     puts("Please type 1 for \"first class\"");
-     puts("Please type 2 for \"economy\"");
+          puts("Please type 1 for \"first class\"");
+          puts("Please type 2 for \"economy\"");
           classe = getchar();
 
           switch (classe)
@@ -59,6 +59,17 @@ int main()
 
           case '2':
                srand(time(NULL));
+               posto = rand() % 11;
+               
+               if (posto == 0)
+               {
+                    posto + 6;
+               }
+               else if (posto < 5)
+               {
+                    posto + 7;
+               }
+
                if (arrayPosti[posto] == 0)
                {
                     ++arrayPosti[posto];
@@ -66,7 +77,7 @@ int main()
                }
                else
                {
-                    puts("Seat no more available orcoddio, try again");
+                    puts("Seat no more available, try again");
                     --i;
                }
                break;
