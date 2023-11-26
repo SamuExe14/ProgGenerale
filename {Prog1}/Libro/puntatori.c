@@ -121,3 +121,13 @@ int main(){
      // *ptr = 7; //? --> Errore
      // ptr = &y; //? --> Errore
 }
+
+//! Array di puntatori a caratteri costanti
+
+int main(){
+     const char * suit[5] = { "Hearts", "Diamonds", "Spades", "Clubs", NULL}; //! --> Inizializza un'array di puntatori costante
+     
+     for(int x = 0; x < 4; x++){
+          printf("%c ", *suit[x]);
+     }
+}
