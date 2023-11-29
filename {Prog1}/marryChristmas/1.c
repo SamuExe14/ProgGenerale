@@ -30,12 +30,24 @@ void randomizza(bool array[ARRAY][ARRAY])
      puts("");
 }
 
-void santone(randomizza()){
-     
+void santone(bool array[ARRAY][ARRAY])
+{
+
+     // size_t santone = array[ARRAY - 5][ARRAY - 4];
+
+     for (size_t row = 5; row <= ARRAY; ++row)
+     {
+          for (size_t column = 4; column <= ARRAY; column)
+          {
+
+          }
+     }
 }
+
 int main()
 {
      bool rajasthan[ARRAY][ARRAY] = {0};
 
      randomizza(rajasthan);
+     // santone(rajasthan);
 }
