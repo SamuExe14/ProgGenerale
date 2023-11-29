@@ -15,8 +15,9 @@ che egli sia traviato dalle usanze oltre colonne.
 #include <stdbool.h>
 #define ARRAY 7
 
-void randomizza(bool array[ARRAY][ARRAY], size_t size)
+void randomizza(bool array[ARRAY][ARRAY])
 {
+     srand(time(NULL));
      for (size_t row = 0; row < ARRAY; ++row)
      {
           puts("");
@@ -29,10 +30,9 @@ void randomizza(bool array[ARRAY][ARRAY], size_t size)
      puts("");
 }
 
-void *randomPtr(randomizza(bool array[ARRAY][ARRAY]))
-{
+void santone(randomizza()){
+     
 }
-
 int main()
 {
      bool rajasthan[ARRAY][ARRAY] = {0};
