@@ -9,11 +9,27 @@ centro della regione, esegue un movimento casuale
 unitario alla volta in una delle quattro direzioni prima
 che egli sia traviato dalle usanze oltre colonne.
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
 #define ARRAY 7
+void santone(bool array[ARRAY][ARRAY])
+{
+     for (size_t i = 0; i < ARRAY; ++i)
+     {
+          puts("");
+          for (size_t j = 0; j < ARRAY; ++j)
+          {
+               printf("[%d] ", array[i][j]);
+               size_t row = rand() % 7;
+               size_t column = rand() % 7;
+               printf(".");
+               // if(array[row][column] == 1)
+          }
+     }
+}
 
 void randomizza(bool array[ARRAY][ARRAY])
 {
@@ -24,30 +40,21 @@ void randomizza(bool array[ARRAY][ARRAY])
           for (size_t column = 0; column < ARRAY; ++column)
           {
                array[row][column] = rand() % 2;
+               if (row == 3 && column == 3)
+               {
+                    printf("→");
+               }
                printf("[%d] ", array[row][column]);
           }
      }
      puts("");
-}
-
-void santone(bool array[ARRAY][ARRAY])
-{
-
-     // size_t santone = array[ARRAY - 5][ARRAY - 4];
-
-     for (size_t row = 5; row <= ARRAY; ++row)
-     {
-          for (size_t column = 4; column <= ARRAY; column)
-          {
-
-          }
-     }
+     santone(array);
 }
 
 int main()
 {
-     bool rajasthan[ARRAY][ARRAY] = {0};
+     static bool rajasthan[ARRAY][ARRAY] = {0};
+     puts("La regione del Rajasthan si presenta così e il santone si trova al centro");
 
      randomizza(rajasthan);
-     // santone(rajasthan);
 }
