@@ -15,20 +15,20 @@ che egli sia traviato dalle usanze oltre colonne.
 #include <time.h>
 #include <stdbool.h>
 #define ARRAY 7
+
 void santone(bool array[ARRAY][ARRAY])
 {
-     for (size_t i = 0; i < ARRAY; ++i)
+     int counterLibri = 0;
+     for (int i = 0; i < 10; ++i)
      {
-          puts("");
-          for (size_t j = 0; j < ARRAY; ++j)
+          size_t row = 1 + rand() % ARRAY;
+          size_t column = 1 + rand() % ARRAY;
+          if (array[row][column] == 1)
           {
-               printf("[%d] ", array[i][j]);
-               size_t row = rand() % 7;
-               size_t column = rand() % 7;
-               printf(".");
-               // if(array[row][column] == 1)
+               ++counterLibri;
           }
      }
+     printf("Il santone in 10 mosse ha trovato %d libri sacri\n", counterLibri);
 }
 
 void randomizza(bool array[ARRAY][ARRAY])
