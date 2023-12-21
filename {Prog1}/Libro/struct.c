@@ -28,6 +28,6 @@ struct employee2
      unsigned int age;
      char gender;
      double hourlySalary;
-     struct employee teamLeaderPtr; //! E' un errore 
+     // struct employee teamLeaderPtr; //! E' un errore 
      struct employee *teamLeaderPtr;
 };
