@@ -3,26 +3,34 @@
 
 int main()
 {
-     int isblank(int c); //? --> Restituisce vero se c è uno spazio o una tabulazione, altrimenti falso
 
-     int isdigit(int c); //? --> Restituisce vero se c è una cifra, altrimenti falso
+int isblank(int c); //? --> Restituisce vero se c è uno spazio o una tabulazione, altrimenti falso
 
-     int isalpha(int c); //? --> Restituisce vero se c è una lettera, altrimenti falso
 
-     int isalnum(int c); //? --> Restituisce vero se c è una lettera o una cifra, altrimenti falso
+int isdigit(int c); //? --> Restituisce vero se c è una cifra, altrimenti falso
 
-     int islower(int c); //? --> Restituisce vero se c è una lettera minuscola, altrimenti falso
 
-     int isupper(int c); //? --> Restituisce vero se c è una lettera maiuscola, altrimenti falso
+int isalpha(int c); //? --> Restituisce vero se c è una lettera, altrimenti falso
 
-     int toupper(int c) //? --> Restituisce la lettera maiuscola corrispondente a c, se c è una lettera minuscola, altrimenti c
 
-         int tolower(int c) //? --> Restituisce la lettera minuscola corrispondente a c, se c è una lettera maiuscola, altrimenti c
+int isalnum(int c); //? --> Restituisce vero se c è una lettera o una cifra, altrimenti falso
+
+
+int islower(int c); //? --> Restituisce vero se c è una lettera minuscola, altrimenti falso
+
+
+int isupper(int c); //? --> Restituisce vero se c è una lettera maiuscola, altrimenti falso
+
+
+int toupper(int c) //? --> Restituisce la lettera maiuscola corrispondente a c, se c è una lettera minuscola, altrimenti c
+
+
+int tolower(int c) //? --> Restituisce la lettera minuscola corrispondente a c, se c è una lettera maiuscola, altrimenti c
 
 //! FUNZIONI DI CONVERSIONI DI STRINGHE
 #include <stdlib.h>
 
-         double strtod(const char *nptr, char **endptr); //? --> Converte la stringa nptr in un valore double.
+     double strtod(const char *nptr, char **endptr); //? --> Converte la stringa nptr in un valore double.
 
      long strtol(const char *nptr, char **endptr, int base); //? --> Converte la stringa nptr in un valore long.
 
