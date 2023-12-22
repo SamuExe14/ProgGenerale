@@ -28,7 +28,7 @@ struct employee2
      unsigned int age;
      char gender;
      double hourlySalary;
-     // struct employee teamLeaderPtr; //! E' un errore
+     // struct employee teamLeaderPtr; //! ERRORE
      struct employee *teamLeaderPtr;
 };
 
@@ -70,4 +70,16 @@ typedef struct {
      char *suit;
 }Card; //? Crea il tipo struct Card senza un'ulteriore istruzione typedef
 
-Card deck[52]; //? Crea un'array di 52 struct Card 
+Card deck[52]; //? Crea un'array di 52 struct Card
+
+//! UNION
+
+//* A differenza delle struct, i membri delle union condividono lo stesso spazio di memoria
+//* Le definizioni di unione vengono solitamente poste all'interno di un file di intestazione separato
+//* e incluso all'interno di tutti i file sorgente che usano il tipo unione
+union number {
+     int x;
+     double y;
+};//? La definizione di una union segue le stesse regole delle struct
+
+
