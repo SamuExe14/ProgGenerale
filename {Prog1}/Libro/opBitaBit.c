@@ -1,11 +1,12 @@
 //* In C è possibile effettuare operazioni bitwise quali:
 //* · & AND 
-//* · | OR inclusivo
-//* · ^ OR esclusivo
+//* · | OR inclusivo = Usato per mettere specifici bit a 1 
+//* · ^ OR esclusivo = Mette ogni bit nel risultato a 1 se un solo dei bit nei suoi due operandi è 1
 //* · << shift a sinistra
 //* · >> shift a destra
 //* · ~ complemento a uno
 
+//! ALGORITMO PER CONVERSIONE DA INTERO A BINARIO
 #include <stdio.h>
 
 void displayBits(unsigned int value);
@@ -24,7 +25,7 @@ void displayBits(unsigned int value)
 {
 
      unsigned int displayMask = 1 << 31;
-     printf("%10u = ", value);
+     printf("%27u = ", value);
 
      for (unsigned int c = 1; c <= 32; ++c)
      {
@@ -36,6 +37,5 @@ void displayBits(unsigned int value)
                printf(" ");
           }
      }
-
-     printf("\n");
+     puts("");
 }
