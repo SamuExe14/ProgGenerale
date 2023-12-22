@@ -1,3 +1,11 @@
+//* In C è possibile effettuare operazioni bitwise quali:
+//* · & AND 
+//* · | OR inclusivo
+//* · ^ OR esclusivo
+//* · << shift a sinistra
+//* · >> shift a destra
+//* · ~ complemento a uno
+
 #include <stdio.h>
 
 void displayBits(unsigned int value);
