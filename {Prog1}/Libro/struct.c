@@ -65,21 +65,10 @@ int main()
 
 typedef struct card Card;
 
-typedef struct {
+typedef struct
+{
      char *face;
      char *suit;
-}Card; //? Crea il tipo struct Card senza un'ulteriore istruzione typedef
+} Card; //? Crea il tipo struct Card senza un'ulteriore istruzione typedef
 
 Card deck[52]; //? Crea un'array di 52 struct Card
-
-//! UNION
-
-//* A differenza delle struct, i membri delle union condividono lo stesso spazio di memoria
-//* Le definizioni di unione vengono solitamente poste all'interno di un file di intestazione separato
-//* e incluso all'interno di tutti i file sorgente che usano il tipo unione
-union number {
-     int x;
-     double y;
-};//? La definizione di una union segue le stesse regole delle struct
-
-
