@@ -53,3 +53,21 @@ int main()
 
      printf("%s", cardPtr->suit); //? Accesso al membro della struct tramite operatore ->
 }
+
+//! PASSAGGIO DI UNA STRUCT A UNA FUNZIONE
+
+//* Le strutture possono essere passate alle funzioni nelle seguenti maniere:
+//* · Passando i loro membri individuali
+//* · Passando l'intera struct
+//* · Passando un puntatore alla struct
+
+//! TYPEDEF
+
+typedef struct card Card;
+
+typedef struct {
+     char *face;
+     char *suit;
+}Card; //? Crea il tipo struct Card senza un'ulteriore istruzione typedef
+
+Card deck[52]; //? Crea un'array di 52 struct Card 
