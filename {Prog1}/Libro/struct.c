@@ -28,6 +28,28 @@ struct employee2
      unsigned int age;
      char gender;
      double hourlySalary;
-     // struct employee teamLeaderPtr; //! E' un errore 
+     // struct employee teamLeaderPtr; //! E' un errore
      struct employee *teamLeaderPtr;
 };
+
+//! ACCESSO AI MEMBRI DI UNA STRUTTURA
+
+int main()
+{
+     //* Definisco la struct card con i relativi membri
+     struct card
+     {
+          char *value;
+          char *suit;
+     };
+     //* Definisco e inizializzo la variabile aCard di tipo struct card
+     struct card aCard = {"Three", "Spades"};
+
+     printf("%s of %s\n", aCard.value, aCard.suit); //? Accesso ai membri della struct tramite operatore .
+
+     //* Definisco e inizializzo il puntatore *cardPtr di tipo struct card
+     struct card *cardPtr;
+     cardPtr = &aCard; //* Faccio puntare cardPtr all'indirizzo di memoria di aCard
+
+     printf("%s", cardPtr->suit); //? Accesso al membro della struct tramite operatore ->
+}
