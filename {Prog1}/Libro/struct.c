@@ -54,6 +54,28 @@ int main()
      printf("%s", cardPtr->suit); //? Accesso al membro della struct tramite operatore ->
 }
 
+//! STRUCT E UNION ANONIME
+
+struct myStruct
+{
+     int member1;
+     int member2;
+
+     struct
+     {
+          int nestedNumber1;
+          int nestedNumber2;
+     };
+};
+
+int main(){
+     int x;
+     int x = myStruct.member1;
+     x = myStruct.member2;
+     x = myStruct.nestedNumber1;
+     x = myStruct.nestedNumber2; //? Accesso ai membri di una struct anonima
+}
+
 //! PASSAGGIO DI UNA STRUCT A UNA FUNZIONE
 
 //* Le strutture possono essere passate alle funzioni nelle seguenti maniere:
