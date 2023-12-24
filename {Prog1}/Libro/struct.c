@@ -68,7 +68,8 @@ struct myStruct
      };
 };
 
-int main(){
+int main()
+{
      int x;
      int x = myStruct.member1;
      x = myStruct.member2;
