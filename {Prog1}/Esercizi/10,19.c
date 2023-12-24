@@ -5,10 +5,10 @@
 struct healtProfile{
      char nome[10];
      char cognome[15];
-     char *sesso;
-     int *annoNascita;
+     char sesso[3];
+     int annoNascita;
      float altezza;
-     float *peso;
+     float peso;
 };
 
 // int anniPaziente();
@@ -17,25 +17,31 @@ struct healtProfile{
 
 int main(){
 
-     struct healtProfile *HealtProfile;
+     struct healtProfile HealtProfile;
 
      puts("Inserire nei seguenti campi le informazioni richieste:");
      
      printf("Nome: ");
-     scanf("%s", &HealtProfile->nome);
+     scanf("%s", HealtProfile.nome);
+     // printf("%s", HealtProfile.nome);
      
      printf("Cognome: ");
-     scanf("%s", &HealtProfile->cognome);
+     scanf("%s", HealtProfile.cognome);
+     // printf("%s", HealtProfile.cognome);
 
      printf("Sesso M/F: ");
-     scanf("%s", HealtProfile->sesso);
+     scanf("%s", HealtProfile.sesso);
+     // printf("%s", HealtProfile.sesso);
 
      printf("Anno di nascita: ");
-     scanf("%d", &HealtProfile->annoNascita);
+     scanf("%d", &HealtProfile.annoNascita);
+     // printf("%d", HealtProfile.annoNascita);
 
      printf("Altezza: ");
-     scanf("%f", HealtProfile->altezza);
+     scanf("%f", &HealtProfile.altezza);
+     // printf("%f", HealtProfile.altezza);
 
      printf("Peso in kg: ");
-     scanf("%f", HealtProfile->peso);
+     scanf("%f", &HealtProfile.peso);
+     // printf("%f", HealtProfile.peso);
 }
