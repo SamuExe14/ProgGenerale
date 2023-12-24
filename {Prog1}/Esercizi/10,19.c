@@ -53,23 +53,24 @@ int main()
      int *anniPtr;
      *anniPtr = anniPaziente(HealtProfile.annoNascita);
      frequenzaCardiaca(anniPtr);
-     
-     
 }
 
-float BMI(float metri, float kg){
+float BMI(float metri, float kg)
+{
      float bmi = kg / (metri * 2);
      // printf("Il BMI del paziente equivale a %f", bmi);
      return bmi;
 }
 
-int anniPaziente(int anni){
+int anniPaziente(int anni)
+{
      anni = 2023 - anni;
      // printf("Il paziente ha %d anni\n", anni);
      return anni;
 }
 
-int frequenzaCardiaca(int *Ptr){
+int frequenzaCardiaca(int *Ptr)
+{
      int cardMax = 220 - *Ptr;
 
      int cardNorm = cardMax / 2;
@@ -77,5 +78,4 @@ int frequenzaCardiaca(int *Ptr){
 
      printf("La frequenza cardiaca max equivale a %d bpm\n", cardMax);
      printf("mentre la frequenza cardiaca normale si aggira intorno ai %d e i %d bpm\n", cardNorm, cardNorm1);
-
 }
