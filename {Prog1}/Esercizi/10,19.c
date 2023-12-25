@@ -53,6 +53,10 @@ int main()
      int *anniPtr;
      *anniPtr = anniPaziente(HealtProfile.annoNascita);
      frequenzaCardiaca(anniPtr);
+
+     puts("");
+     printf("Cartella clinica di %s %s\n", HealtProfile.nome, HealtProfile.cognome);
+     printf("%s\n%s\n%s\n%d\n%.2f\n%.2f\n", HealtProfile.nome, HealtProfile.cognome, HealtProfile.sesso, HealtProfile.annoNascita, HealtProfile.altezza, HealtProfile.peso);
 }
 
 float BMI(float metri, float kg)
