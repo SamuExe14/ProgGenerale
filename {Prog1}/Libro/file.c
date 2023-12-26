@@ -8,15 +8,16 @@
 
 // fgetc(FILE *stream) //? legge un carattere da un file come getchar. La funzione riceve un puntatore a file come argomento
 
-//     fputc('a', FILE *stream) //? equivalente a putchar, riceve il carattere da scrivere e lo stream dove scriverlo
+//   fputc('a', FILE *stream) //? equivalente a putchar, riceve il carattere da scrivere e lo stream dove scriverlo
 
-//     fgets()
+//   fgets()
 
-//         fputs()
+//   fputs()
 
-//             fscanf()
+//   fprintf(stdout, "%d ....", ......)
 
-//                 fprintf()
+//   fscanf()
+
 
 #include <stdio.h> //? Molte delle funzioni usate per i file sono definite in <stdio.h>
 
@@ -42,10 +43,16 @@ int main()
 
           while (!feof(stdin)) //? Finché non viene immesso un EOF all'interno dello stdin continua a scrivere all'interno del file
           {
-               fprintf(cfPtr, "%d %s %.2lf\n", account, name, balance);
+               fprintf(cfPtr, "%d %s %.2lf\n", account, name, balance);//? Equivalente al printf, ma può inviare i dati in uscita allo stdout usato come argomento nella funzione
                printf("%s", "? ");
                scanf("%d%29s%lf", &account, name, &balance);
           }
-          fclose(cfPtr);
+          fclose(cfPtr);//? Al termine dell'esecuzione del programma, fclose chiude l'esecuzione del programma. 
+                        //? La funzione riceve in ingresso il puntatore al file per svolgere il suo compito. 
+                        //? Se questa istruzione non viene fornita esplicitamente, sarà il sistema operativo a farlo in automatico.
      }
 }
+
+//! MODALITA' DI APERTURA DI UN FILE
+
+
