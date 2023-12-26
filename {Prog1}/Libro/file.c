@@ -6,17 +6,19 @@
 
 //* L'apertura di un file genera un puntatore a una struttura FILE
 
-// fgetc(FILE *stream) //? legge un carattere da un file come getchar. La funzione riceve un puntatore a file come argomento
+//*   fgetc(FILE *stream) //? legge un carattere da un file come getchar. La funzione riceve un puntatore a file come argomento
 
-//   fputc('a', FILE *stream) //? equivalente a putchar, riceve il carattere da scrivere e lo stream dove scriverlo
+//*   fputc('a', FILE *stream) //? equivalente a putchar, riceve il carattere da scrivere e lo stream dove scriverlo
 
-//   fgets()
+//*   fgets()
 
-//   fputs()
+//*   fputs()
 
-//   fprintf(stdout, "%d ....", ......)
+//*   fprintf(stdout, "%d ....", ......)
 
-//   fscanf()
+//*   fscanf()
+
+//*   rewind(cfPtr) --> Fa sì che il puntatore di posizione del file venga riposizionato all'inizio
 
 #include <stdio.h> //? Molte delle funzioni usate per i file sono definite in <stdio.h>
 
@@ -97,5 +99,46 @@ int main()
                fscanf(cfPtr, "%d%29s%lf", &account, name, &balance);
           }
           fclose(cfPtr);
+     }
+}
+
+//! FILE AD ACCESSO CASUALE
+
+//* I file ad accesso casuale hanno solitamente una lunghezza fissa.
+//* I record di lunghezza fissa permettono di inserire dati in un file senza distruggere altri dati del file
+
+//! CREAZIONE DI UN FILE AD ACCESSO CASUALE
+
+fwrite() //? Trasferisce un numero specificato di byte su un file a cominciare da una data posizione della memoria.
+
+    fread(&number, sizeof(int), 1, fPtr) //? Trasferisce un numero specificato di byte dalla posizione nel file specificata dal puntatore
+                                         //? a un'area della memoria a cominciare da un indirizzo specificato.
+
+#include <stdio.h>
+
+struct clientData {
+     unsigned int acctNum; // numero del conto
+     char lastName[15]; // cognome
+     char firstName[10]; // nome
+     double balance; //saldo del conto
+};
+
+    int main()
+{
+     FILE *cfPtr; // puntatore al file account.dat
+     
+     if ((cfPtr = fopen("account.dat", "wb")) == NULL) // fopen apre il file in scrittura binaria
+     {
+          puts("File could not be opened");
+     }
+     else
+     {
+          struct clientData blankClient = {0, "", "", 0.0}; // crea clientData con informazioni predefinite
+
+          for (unsigned int i = 0; i <= 100; ++i) // scrive 100 record vuoti sul account.dat
+          {
+               fwrite(&blankClient, sizeof(struct clientData), 1, cfPtr);
+          }
+          fclose(cfPtr); // fclose chiude il file
      }
 }
