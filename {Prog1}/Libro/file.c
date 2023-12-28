@@ -115,18 +115,18 @@ fwrite() //? Trasferisce un numero specificato di byte su un file a cominciare d
                                          //? a un'area della memoria a cominciare da un indirizzo specificato.
 
 #include <stdio.h>
-
-struct clientData {
+struct clientData
+{
      unsigned int acctNum; // numero del conto
-     char lastName[15]; // cognome
-     char firstName[10]; // nome
-     double balance; //saldo del conto
+     char lastName[15];    // cognome
+     char firstName[10];   // nome
+     double balance;       // saldo del conto
 };
 
-    int main()
+int main()
 {
      FILE *cfPtr; // puntatore al file account.dat
-     
+
      if ((cfPtr = fopen("account.dat", "wb")) == NULL) // fopen apre il file in scrittura binaria
      {
           puts("File could not be opened");
