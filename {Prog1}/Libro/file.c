@@ -115,7 +115,7 @@ fwrite() //? Trasferisce un numero specificato di byte su un file a cominciare d
                                          //? a un'area della memoria a cominciare da un indirizzo specificato.
 
 #include <stdio.h>
-struct clientData
+    struct clientData
 {
      unsigned int acctNum; // numero del conto
      char lastName[15];    // cognome
@@ -140,5 +140,49 @@ int main()
                fwrite(&blankClient, sizeof(struct clientData), 1, cfPtr);
           }
           fclose(cfPtr); // fclose chiude il file
+     }
+}
+
+//! SCRITTURA DI DATI IN MANIERA CASUALE SU UN FILE AD ACCESSO CASUALE
+
+#include <stdio.h>
+
+struct clientData
+{
+     unsigned int acctNum;
+     char lastName[15];
+     char firstName[10];
+     double balance;
+};
+
+int main()
+{
+     FILE *cfPtr;
+
+     if ((cfPtr = fopen("accounts.dat", "rb+")) == NULL)
+     {
+          puts("File could not be opened");
+     }
+     else
+     {
+          struct clientData client = {0, "", "", 0.0};
+
+          printf("Enter account number from 1 to 100, 0 to end input");
+          scanf("%d", &client.acctNum);
+
+          while (client.acctNum != 0)
+          {
+               puts("Enter lastname, firstname and balance");
+
+               fscanf(stdin, "%14s%9s%lf", client.lastName, client.firstName, &client.balance);
+
+               fseek(cfPtr, (client.acctNum - 1) * sizeof(struct clientData), SEEK_SET);
+
+               fwrite(&client, sizeof(struct clientData), 1, cfPtr);
+
+               puts("\nEnter account number:");
+               scanf("%d", &client.acctNum);
+          }
+          fclose(cfPtr);
      }
 }
