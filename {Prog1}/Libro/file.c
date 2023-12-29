@@ -175,9 +175,11 @@ int main()
                puts("Enter lastname, firstname and balance");
 
                fscanf(stdin, "%14s%9s%lf", client.lastName, client.firstName, &client.balance);
-
-               fseek(cfPtr, (client.acctNum - 1) * sizeof(struct clientData), SEEK_SET);
-
+               //? fseek(FILE *stream, long int offset, int origin)
+               fseek(cfPtr, (client.acctNum - 1) * sizeof(struct clientData), SEEK_SET); //? Cerca nel file la posizione del record specificato
+               //? SEEK_SET indica che il puntatore è posizionato secondo il valore di offset riferito all'inizio del file
+               //? SEEK_CUR si trova alla posizione corrente nel file
+               //? SEEK_END si trova alla fine del file
                fwrite(&client, sizeof(struct clientData), 1, cfPtr);
 
                puts("\nEnter account number:");
