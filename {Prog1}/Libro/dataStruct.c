@@ -50,7 +50,7 @@ int main()
                     printf("Enter a character to be deleted:");
                     scanf("\n%c", &item);
 
-                    if (delete (startPtr, item))
+                    if (delete(&startPtr, item))
                     {
                          printf("%c deleted.\n", item); // rimuovi l'elemento
                          printList(startPtr);
