@@ -50,7 +50,7 @@ int main()
                     printf("Enter a character to be deleted:");
                     scanf("\n%c", &item);
 
-                    if (delete(&startPtr, item))
+                    if (delete (&startPtr, item))
                     {
                          printf("%c deleted.\n", item); // rimuovi l'elemento
                          printList(startPtr);
@@ -133,7 +133,7 @@ char delete(ListNodePtr *sPtr, char value) // cancella un elemento dalla lista
           ListNodePtr previousPtr = *sPtr;
           ListNodePtr currentPtr = (*sPtr)->nextPtr;
 
-          while (currentPtr != NULL && currentPtr->data != value) // riperti il ciclo per trovare la posizione corretta nella lista
+          while (currentPtr != NULL && currentPtr->data != value) // ripeti il ciclo per trovare la posizione corretta nella lista
           {
                previousPtr = currentPtr;         // va avanti ...
                currentPtr = currentPtr->nextPtr; // ... al nodo successivo
@@ -149,7 +149,7 @@ char delete(ListNodePtr *sPtr, char value) // cancella un elemento dalla lista
      return '\0';
 }
 
-int isEmpty(ListNodePtr sPtr) // restituisce 1 se la lista è vuota altrimenti 0
+int isEmpty(ListNodePtr sPtr) // determina se la lista è vuota, restituisce 1 se vuota altrimenti 0
 {
      return sPtr == NULL;
 }
