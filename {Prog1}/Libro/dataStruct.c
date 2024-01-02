@@ -19,7 +19,7 @@ typedef struct listNode ListNode; // sinonimo per struct listNode
 typedef ListNode *ListNodePtr;
 
 void insert(ListNodePtr *sPtr, char value);
-char delete(ListNode *sPtr, char value);
+char delete(ListNodePtr *sPtr, char value);
 int isEmpty(ListNodePtr sPtr);
 void printList(ListNodePtr currentPtr);
 void instructions(void);
@@ -50,9 +50,9 @@ int main()
                     printf("Enter a character to be deleted:");
                     scanf("\n%c", &item);
 
-                    if (delete(startPtr, item))
+                    if (delete (startPtr, item))
                     {
-                         printf("%c deleted.\n", item);
+                         printf("%c deleted.\n", item); // rimuovi l'elemento
                          printList(startPtr);
                     }
                     else
@@ -76,7 +76,7 @@ int main()
      puts("End of");
 }
 
-void instructions(void)
+void instructions(void) // stampa le istruzioni per l'utente
 {
      puts("Enter your choice:\n"
           "1 to insert an element into the list\n"
@@ -84,30 +84,30 @@ void instructions(void)
           "3 to end");
 }
 
-void insert(ListNodePtr *sPtr, char value)
+void insert(ListNodePtr *sPtr, char value) // inserisci un nuovo valore nella lista ordinata
 {
-     ListNodePtr newPtr = malloc(sizeof(ListNode));
+     ListNodePtr newPtr = malloc(sizeof(ListNode)); // crea il nodo
 
-     if (newPtr != NULL)
+     if (newPtr != NULL) // se c'è spazio disponibile
      {
-          newPtr->data = value;
+          newPtr->data = value; // inserisci value nel nodo
           newPtr->nextPtr = NULL;
 
           ListNodePtr previousPtr = NULL;
           ListNodePtr currentPtr = *sPtr;
 
-          while (currentPtr != NULL && value > currentPtr->data)
+          while (currentPtr != NULL && value > currentPtr->data) // ripeti il ciclo per trovare la posizione corretta nella lista
           {
-               previousPtr = currentPtr;
-               currentPtr = currentPtr->nextPtr;
+               previousPtr = currentPtr;         // va avanti ...
+               currentPtr = currentPtr->nextPtr; // ... al nodo successivo
           }
-
+          // inserisci il nuovo nodo all'inizio della lista
           if (previousPtr == NULL)
           {
                newPtr->nextPtr = *sPtr;
                *sPtr = newPtr;
           }
-          else
+          else // inserisci il nuovo nodo tra previousPtr e currentPtr
           {
                previousPtr->nextPtr = newPtr;
                newPtr->nextPtr = currentPtr;
@@ -119,13 +119,13 @@ void insert(ListNodePtr *sPtr, char value)
      }
 }
 
-char delete(ListNodePtr *sPtr, char value)
+char delete(ListNodePtr *sPtr, char value) // cancella un elemento dalla lista
 {
-     if (value == (*sPtr)->data)
+     if (value == (*sPtr)->data) // cancella il primo nodo della lista se viene trovata una corrispondenza
      {
-          ListNodePtr tempPtr = *sPtr;
-          *sPtr = (*sPtr)->nextPtr;
-          free(tempPtr);
+          ListNodePtr tempPtr = *sPtr; // aggancia il nodo da rimuovere
+          *sPtr = (*sPtr)->nextPtr;    // sfila il nodo
+          free(tempPtr);               // libera il nodo e la memoria associata
           return value;
      }
      else
@@ -133,12 +133,12 @@ char delete(ListNodePtr *sPtr, char value)
           ListNodePtr previousPtr = *sPtr;
           ListNodePtr currentPtr = (*sPtr)->nextPtr;
 
-          while (currentPtr != NULL && currentPtr->data != value)
+          while (currentPtr != NULL && currentPtr->data != value) // riperti il ciclo per trovare la posizione corretta nella lista
           {
-               previousPtr = currentPtr;
-               currentPtr = currentPtr->nextPtr;
+               previousPtr = currentPtr;         // va avanti ...
+               currentPtr = currentPtr->nextPtr; // ... al nodo successivo
           }
-          if (currentPtr != NULL)
+          if (currentPtr != NULL) // cancella il nodo a cui punta currentPtr
           {
                ListNodePtr tempPtr = currentPtr;
                previousPtr->nextPtr = currentPtr->nextPtr;
@@ -149,14 +149,14 @@ char delete(ListNodePtr *sPtr, char value)
      return '\0';
 }
 
-int isEmpty(ListNodePtr sPtr)
+int isEmpty(ListNodePtr sPtr) // restituisce 1 se la lista è vuota altrimenti 0
 {
      return sPtr == NULL;
 }
 
-void printList(ListNodePtr currentPtr)
+void printList(ListNodePtr currentPtr) // stampa la lista
 {
-     if (isEmpty(currentPtr))
+     if (isEmpty(currentPtr)) // se la lista è vuota
      {
           puts("List is empty");
      }
@@ -164,7 +164,7 @@ void printList(ListNodePtr currentPtr)
      {
           puts("The list is:");
 
-          while (currentPtr != NULL)
+          while (currentPtr != NULL) // finché non si raggiunge la fine della lista
           {
                printf("%c --> ", currentPtr->data);
                currentPtr = currentPtr->nextPtr;
