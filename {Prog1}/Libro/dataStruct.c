@@ -1,3 +1,18 @@
+//! ALLOCAZIONE DINAMICA DI MEMORIA
+//* Per mantenere delle strutture dinamiche di dati che possono crescere e diminuire all'esecuzione si richiede un'allocazione di memoria dinamica.
+//* Per effettuare questa operazione sono essenziali la malloc e l'operatore sizeof().
+
+// struct node {
+//      int data;
+//      struct node *nextPtr; // *nextPtr è chiamato link perchè può essere usato per legare una struct di tipo struct node a un'altra dello stesso tipo
+// };
+
+// int main(){
+// myPtr = malloc(sizeof(struct node)); //? Alloca dinamicamente una nuova area in memoria equivalente al sizeof(struct node) e memorizza un puntatore alla memoria allocata in newPtr.
+//                                       //? Se la memoria non viene allocata malloc restituisce NULL
+// free(myPtr); //? Libera la memoria e viene restituita al sistema
+// }
+
 //! STRUTTURE DINAMICHE DI DATI
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,7 +56,9 @@ int main()
           case 1:
                puts("Enter a character:");
                scanf("%c", &item);
-               insert(&startPtr, item); // inserisce un elemento nella lista
+               insert(&startPtr, item); //? inserisce un elemento nella lista fornendo l'indirizzo della lista stessa...
+               //? ... Fornire l'indirizzo della lista è necessario per essere modificata tramite una chiamata per riferimento, e dato che essa stessa è un puntatore...
+               //? passare il suo indirizzo crea un puntatore a un puntatore facendo una indirezione doppia
                printList(startPtr);
                break;
           case 2: // cancella un elemento se la lista non è vuota
@@ -83,7 +100,6 @@ void instructions(void) // stampa le istruzioni per l'utente
           "2 to delete an element from the list\n"
           "3 to end");
 }
-
 void insert(ListNodePtr *sPtr, char value) // inserisci un nuovo valore nella lista ordinata
 {
      ListNodePtr newPtr = malloc(sizeof(ListNode)); // crea il nodo
@@ -118,6 +134,11 @@ void insert(ListNodePtr *sPtr, char value) // inserisci un nuovo valore nella li
           printf("%c not inserted. No memory available\n", value);
      }
 }
+//? Funzione insert
+//* 1) Crea un nodo con malloc(), assegna a newPtr l'indirizzo della nuova memoria allocata , assegna a newPtr->data il carattere e assegna NULL a newPtr->nextPtr
+//* 2) Inizializza previousPtr a NULL e currentPtr a *sPtr. previousPtr e currentPtr memorizzano rispettivamente le posizioni del nodo che precede e che segue il punto dell'intersezione
+//* 3) Finché currentPtr non è NULL e il valore da inserire è maggiore di currentPtr->data assegna currentPtr a previousPtr e fa avanzare currentPtr al nodo successivo
+//* 4) Se previousPtr è NULL inserisci il nuovo nodo in prima posizione, assegna *sPtr a newPtr->nextPtr e assegna currentPtr a newPtre->nextPtr
 
 char delete(ListNodePtr *sPtr, char value) // cancella un elemento dalla lista
 {
@@ -148,7 +169,11 @@ char delete(ListNodePtr *sPtr, char value) // cancella un elemento dalla lista
      }
      return '\0';
 }
-
+//? Funzione delete
+//* 1) Se il carattere da scrivere corrisponde al carattere nel primo nodo della lista, assegna *sPtr a tempPtr(che sarà usato per liberare la memoria), assegna (*sPtr)->nextPtr a *sPtr, libera la memoria e restituisce il carattere cancellato
+//* 2) Altrimenti inizializza previousPtr con *sPtr e currentPtr con (*sPtr)->nextPtr per avanzare al secondo nodo
+//* 3) Finché currentPtr non è NULL e il valore da cancellare non è uguale a currentPtr->data, assegna currentPtr a previousPtr e assegna currentPtr->nextPtr a currentPtr.
+//* 4) Se currentPtr non è NULL assegna currentPtr a tempPtr, assegna currentPtr->nextPtr a previousPtr->nextPtr, libera il nodo puntato da tempPtr e restituisce il carattere che è stato cancellato dalla lista
 int isEmpty(ListNodePtr sPtr) // determina se la lista è vuota, restituisce 1 se vuota altrimenti 0
 {
      return sPtr == NULL;
@@ -178,18 +203,3 @@ void printList(ListNodePtr currentPtr) // stampa la lista
 //! CODE
 //* Le inserzioni vengono fatte nella sua testa e le rimozioni vengono fatte nella sua coda
 //! ALBERI BINARI
-
-//! ALLOCAZIONE DINAMICA DI MEMORIA
-//* Per mantenere delle strutture dinamiche di dati che possono crescere e diminuire all'esecuzione si richiede un'allocazione di memoria dinamica.
-//* Per effettuare questa operazione sono essenziali la malloc e l'operatore sizeof().
-
-// struct node {
-//      int data;
-//      struct node *nextPtr; // *nextPtr è chiamato link perchè può essere usato per legare una struct di tipo struct node a un'altra dello stesso tipo
-// };
-
-// int main(){
-// myPtr = malloc(sizeof(struct node)); //? Alloca dinamicamente una nuova area in memoria equivalente al sizeof(struct node) e memorizza un puntatore alla memoria allocata in newPtr.
-//                                       //? Se la memoria non viene allocata malloc restituisce NULL
-// free(myPtr); //? Libera la memoria e viene restituita al sistema
-// }
