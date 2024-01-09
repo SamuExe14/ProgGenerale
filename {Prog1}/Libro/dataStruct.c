@@ -200,28 +200,155 @@
 
 //! PILE
 //* Le inserzioni e le cancellazioni avvengono sono nella sua cima per la sua struttura LIFO(Last-In-First-Out).
-struct stackNode
+// struct stackNode
+// {
+//      int data;
+//      struct stackNode *nextPtr;
+// };
+
+// typedef struct stackNode StackNode;
+// typedef StackNode *StackNodePtr;
+
+// void push(StackNodePtr *topPtr, int info);
+// int pop(StackNodePtr *topPtr);
+// int isEmpty(StackNodePtr topPtr);
+// void printStack(StackNodePtr currentPtr);
+// void instructions(void);
+
+// int main()
+// {
+//      StackNodePtr stackPtr = NULL; // punta alla cima della pila
+
+//      int value;
+//      instructions();
+//      printf("%s", "? ");
+//      unsigned int choice;
+//      scanf("%u", &choice);
+
+//      while (choice != 3)
+//      {
+//           switch (choice)
+//           {
+//           case 1:
+//                printf("%s", "Enter an integer");
+//                scanf("%d", &value);
+//                push(&stackPtr, value);
+//                printStack(stackPtr);
+//                break;
+//           case 2:
+//                if (!isEmpty(stackPtr))
+//                {
+//                     printf("The popped value is %d.\n", pop(&stackPtr));
+//                }
+//                printStack(stackPtr);
+//                break;
+//           default:
+//                puts("Invalid choice");
+//                instructions();
+//                break;
+//           }
+//           printf("%s", "? ");
+//           scanf("%u", &choice);
+//      }
+//      puts("End of run");
+// }
+
+// void instructions()
+// {
+//      puts("Enter choice:\n"
+//           "1 to push a value on the stack\n"
+//           "2 to pop a value off the stack\n"
+//           "3 to end program");
+// }
+
+// void push(StackNodePtr *topPtr, int info)
+// {
+//      StackNodePtr newPtr = malloc(sizeof(StackNode));
+
+//      if (newPtr != NULL)
+//      {
+//           newPtr->data = info;
+//           newPtr->nextPtr = *topPtr;
+//           *topPtr = newPtr;
+//      }
+//      else
+//      {
+//           printf("%d not inserted. No memory available.\n", info);
+//      }
+// }
+
+// //* 1) Crea un nuovo nodo chiamando malloc() e assegna l'indirizzo della memoria allocata a newPtr
+// //* 2) Assegna a newPtr->data il valore da mettere nella pila e assegna *topPtr a newPtr->nextPtr. Il membro link di newPtr punta ora al precedente nodo in cima
+// //* 3) Assegna newPtr a *topPtr: *topPtr punta ora alla nuova cima della pila
+
+// int pop(StackNodePtr *topPtr)
+// {
+//      StackNodePtr tempPtr = *topPtr;
+//      int popValue = (*topPtr)->data;
+//      *topPtr = (*topPtr)->nextPtr;
+//      free(tempPtr);
+//      return popValue;
+// }
+// //* 1) Assegna *topPtr a tempPtr: tempPtr sarà usato per liberare la memoria non più necessaria
+// //* 2) Assegna (*topPtr)->nextPtr a *topPtr in modo che *topPtr contenga l'indirizzo del nuovo nodo in cima
+// //* 3) Libera la memoria puntata da tempPtr
+// //* 4) Restituisce popValue alla funzione chiamante
+// void printStack(StackNodePtr currentPtr)
+// {
+//      if (currentPtr == NULL)
+//      {
+//           puts("Stack is empty");
+//      }
+//      else
+//      {
+//           puts("The stack is:");
+
+//           while (currentPtr != NULL)
+//           {
+//                printf("%d --> ", currentPtr->data);
+//                currentPtr = currentPtr->nextPtr;
+//           }
+//           puts("NULL\n");
+//      }
+// }
+
+// int isEmpty(StackNodePtr topPtr)
+// {
+//      return topPtr == NULL;
+// }
+//* Le pile mantengono lo spazio di memoria creato per le variabili automatiche in ogni invocazioen di una funzione.
+//* Quando la funzione ritorna alla sua funzione chiamante, lo spazio di memoria per le variabili automatiche di quella funzione viene eliminato con un pop dalla pila e queste variabili non sono più note al programma.
+//* Le pile sono usate dai compilatori nel processo di valutazione delle espressioni e di generazione di codice in linguaggio macchina.
+
+//! CODE
+//* Le inserzioni vengono fatte nella sua testa e le rimozioni vengono fatte nella sua coda
+//* Bisogna immaginare le code come una fila di persone alla cassa: la prima persona in fila è quella che viene servita per prima, mentre gli altri verranno serviti successivamente.
+//* I nodi della coda si estraggono solo dalla sua testa(head) e si inseriscono solo alla fine(tail), infatti si parla di una struttura dati FIFO(First-In-First-Off).
+//* Le operazioni di inserimento e di estrazione sono note rispettivamente come enqueue e dequeue.
+
+struct queueNode
 {
-     int data;
-     struct stackNode *nextPtr;
+     char data;
+     struct queueNode *nextPtr;
 };
 
-typedef struct stackNode StackNode;
-typedef StackNode *StackNodePtr;
+typedef struct queueNode QueueNode;
+typedef QueueNode *QueueNodePtr;
 
-void push(StackNodePtr *topPtr, int info);
-int pop(StackNodePtr *topPtr);
-int isEmpty(StackNodePtr topPtr);
-void printStack(StackNodePtr currentPtr);
+void printfQueue(QueueNodePtr currentPtr);
+int isEmpty(QueueNodePtr headPtr);
+char dequeue(QueueNodePtr *headPtr, QueueNodePtr *tailPtr);
+void enqueue(QueueNodePtr *headPtr, QueueNodePtr *tailPtr, char value);
 void instructions(void);
 
 int main()
 {
-     StackNodePtr stackPtr = NULL; // punta alla cima della pila
+     QueueNodePtr headPtr = NULL;
+     QueueNodePtr tailPtr = NULL;
+     char item;
 
-     int value;
      instructions();
-     printf("%s", "? ");
+     printf("? ");
      unsigned int choice;
      scanf("%u", &choice);
 
@@ -230,80 +357,38 @@ int main()
           switch (choice)
           {
           case 1:
-               printf("%s", "Enter an integer");
-               scanf("%d", &value);
-               push(&stackPtr, value);
-               printStack(stackPtr);
+               printf("Enter a character:");
+               scanf("\n%c", &item);
+               enqueue(&headPtr,&tailPtr, item);
+               printfQueue(headPtr);
                break;
-          case 2:
-               if (!isEmpty(stackPtr))
-               {
-                    printf("The popped value is %d.\n", pop(&stackPtr));
+          case 2: 
+               if(!isEmpty(headPtr)){
+                    item = dequeue(&headPtr, &tailPtr);
+                    printf("%c has been dequeued", item);
                }
-               printStack(stackPtr);
+               printfQueue(headPtr);
                break;
           default:
-               puts("Invalid choice");
+               puts("Invalid choice.\n");
                instructions();
                break;
           }
-          printf("%s", "? ");
+          printf("? ");
           scanf("%u", &choice);
      }
      puts("End of run");
 }
 
-void instructions()
+void instructions(){
+     puts("Enter your choice:\n"
+          "1 to add an item to the queue"
+          "2 to remove an item from queue"
+          "3 to end");
+}
+
+void enqueue(QueueNodePtr)
 {
-     puts("Enter choice:\n"
-          "1 to push a value on the stack\n"
-          "2 to pop a value off the stack\n"
-          "3 to end program");
+     
 }
-
-void push(StackNodePtr *topPtr, int info)
-{
-     StackNodePtr newPtr = malloc(sizeof(StackNode));
-
-     if (newPtr != NULL)
-     {
-          newPtr->data = info;
-          newPtr->nextPtr = *topPtr;
-          *topPtr = newPtr;
-     }
-     else
-     {
-          printf("%d not inserted. No memory available.\n", info);
-     }
-}
-
-int pop(StackNodePtr *topPtr)
-{
-     StackNodePtr tempPtr = *topPtr;
-     int popValue = (*topPtr)->data;
-     *topPtr = (*topPtr)->nextPtr;
-     free(tempPtr);
-     return popValue;
-}
-
-void printStack(StackNodePtr currentPtr){
-     if(currentPtr == NULL){
-          puts("Stack is empty");
-     }else{
-          puts("The stack is:");
-
-          while(currentPtr != NULL){
-               printf("%d --> ", currentPtr->data);
-               currentPtr = currentPtr->nextPtr;
-          }
-          puts("NULL\n");
-     }
-}
-
-int isEmpty(StackNodePtr topPtr){
-     return topPtr == NULL;
-}
-
-//! CODE
-//* Le inserzioni vengono fatte nella sua testa e le rimozioni vengono fatte nella sua coda
 //! ALBERI BINARI
