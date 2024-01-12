@@ -359,11 +359,12 @@ int main()
           case 1:
                printf("Enter a character:");
                scanf("\n%c", &item);
-               enqueue(&headPtr,&tailPtr, item);
+               enqueue(&headPtr, &tailPtr, item);
                printfQueue(headPtr);
                break;
-          case 2: 
-               if(!isEmpty(headPtr)){
+          case 2:
+               if (!isEmpty(headPtr))
+               {
                     item = dequeue(&headPtr, &tailPtr);
                     printf("%c has been dequeued", item);
                }
@@ -380,7 +381,8 @@ int main()
      puts("End of run");
 }
 
-void instructions(){
+void instructions()
+{
      puts("Enter your choice:\n"
           "1 to add an item to the queue"
           "2 to remove an item from queue"
@@ -389,6 +391,4 @@ void instructions(){
 
 void enqueue(QueueNodePtr)
 {
-     
 }
-//! ALBERI BINARI
