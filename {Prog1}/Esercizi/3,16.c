@@ -28,5 +28,5 @@ int main()
         }
     }
     average = counter / iterator;
-    printf("The overall average miles/gallon was %.2f", average);
+    printf("The overall average miles/gallon was %.2f\n", average);
 }
