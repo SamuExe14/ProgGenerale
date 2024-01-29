@@ -1,9 +1,9 @@
 #include <stdio.h>
 #define SIZE 10
 
-int bubbleSort(int array[])
+int bubbleSort(int array[], size_t size)
 {
-     for (unsigned int pass = 1; pass < SIZE; ++pass)
+     for (unsigned int pass = 1; pass < size; ++pass)
      {
           for (size_t i = 0; i < SIZE - 1; ++i)
           {
@@ -30,7 +30,7 @@ int main()
 
      puts("");
 
-     bubbleSort(a);
+     bubbleSort(a, SIZE);
 
      puts("Data items in modified order:");
 
