@@ -86,3 +86,115 @@ struct stackNode
 typedef struct stackNode StackNode;
 typedef StackNode *StackNodePtr;
 
+void push(StackNodePtr *topPtr, int info);
+int pop(StackNodePtr *topPtr);
+int isEmpty(StackNodePtr topPtr);
+void printStack(StackNodePtr currentPtr);
+
+int main()
+{
+     StackNodePtr stackPtr = NULL;
+     int value;
+}
+
+void push(StackNodePtr *topPtr, int info)
+{
+     StackNodePtr newPtr = malloc(sizeof(StackNode));
+
+     if (newPtr != NULL)
+     {
+          newPtr->data = info;
+          newPtr->nextPtr = *topPtr;
+          *topPtr = newPtr;
+     }
+     else
+     {
+          printf("%d Not inserted. No memory available", info);
+     }
+}
+
+int pop(StackNodePtr *topPtr)
+{
+     StackNodePtr tempPtr = *topPtr;
+     *topPtr = (*topPtr)->nextPtr;
+     free(tempPtr);
+     return popValue;
+}
+
+int isEmpty(StackNodePtr topPtr)
+{
+     return topPtr == NULL;
+}
+
+void printStack(StackNodePtr currentPtr)
+{
+     if (currentPtr == NULL)
+     {
+          puts("The stack is empty");
+     }
+     else
+     {
+          while (currentPtr != NULL)
+          {
+               printf("%d -> ", currentPtr->data);
+               currentPtr = currentPtr->nextPtr;
+          }
+          puts("NULL");
+     }
+}
+
+//! Implementazione di una coda
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct queueNode
+{
+     char data;
+     struct queueNode *nextPtr;
+};
+
+typedef struct queueNode QueueNode;
+typedef QueueNode *QueueNodePtr;
+
+void enqueue(StackNodePtr *headPtr, StackNodePtr *tailPtr, char value);
+char dequeue(StackNodePtr *headPtr, StackNodePtr *tailPtr);
+
+int main(void) {}
+
+void enqueue(StackNodePtr *headPtr, StackNodePtr *tailPtr, char value)
+{
+     QueueNodePtr newPtr = malloc(sizeof(StackNode));
+
+     if (newPtr != NULL)
+     {
+          newPtr->data = value;
+          newPtr->nextPtr = NULL;
+          if (!isEmpty(*headPtr))
+          {
+               *headPtr = newPtr;
+          }
+          else
+          {
+               (*tailPtr)->nextPtr = newPtr
+          }
+          tailPtr = newPtr;
+     }
+     else
+     {
+          puts("No memory available");
+     }
+}
+char dequeue(StackNodePtr *headPtr, StackNodePtr *tailPtr)
+{
+     char value = (*tailPtr)->data;
+     QueueNodePtr tempPtr = *headPtr;
+     *headPtr = (*headPtr)->nextPtr;
+
+     if (*headPtr == NULL)
+     {
+          *tailPtr = NULL;
+     }
+     free(tempPtr);
+     return value;
+}
