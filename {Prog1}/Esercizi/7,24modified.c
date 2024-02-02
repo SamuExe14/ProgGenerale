@@ -33,13 +33,14 @@ void deal(unsigned int wDeck[][FACES], const char *wFace[], const char *wSuit[])
           {
                for (size_t column = 0; column < FACES; ++column)
                {
-                         if (wDeck[row][column] == card)
-                         {
-                              printf("%+13s of %s%c", wFace[column], wSuit[row], card ? '\n' : '\n');
-                         }
-                         if(wDeck[row] == card + 1){
-                              printf()
-                         }    
+                    if (wDeck[row][column] == card)
+                    {
+                         printf("%+13s of %s%c", wFace[column], wSuit[row], card ? '\n' : '\n');
+                    }
+                    if (wDeck[row] == card + 1)
+                    {
+                         printf("");
+                    }
                }
           }
      }
