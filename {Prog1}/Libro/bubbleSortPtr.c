@@ -38,7 +38,9 @@ void bubbleSort(int *const array, size_t size)
           {
                if (array[j] > array[j + 1])
                {
-                    swap(&array[j], &array[j + 1]);
+                    int hold = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = hold;
                }
           }
      }
