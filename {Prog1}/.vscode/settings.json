@@ -1,8 +1,0 @@
-{
-  "cmake.configureOnOpen": true,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono'",
-  "files.associations": {
-    "math.h": "c",
-    "complex": "cpp"
-  }
-}
