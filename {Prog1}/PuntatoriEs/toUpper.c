@@ -6,13 +6,13 @@ void toUpperCase(char *arrayPtr);
 
 int main()
 {
-     char array[] = {"dio animale porcoddio 45"};
+     char array[] = {"una semplice stringa 45 ciao"};
 
      char *arrayPtr = array;
 
      toUpperCase(arrayPtr);
 
-     printf(arrayPtr);
+     printf(arrayPtr); 
 }
 
 void toUpperCase(char *arrayPtr)
