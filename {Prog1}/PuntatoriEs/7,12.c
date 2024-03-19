@@ -48,7 +48,6 @@ void deal(unsigned int wDeck[][FACES], const char *wFace[], const char *wSuit[])
       faces = rand() % FACES;
       suits = rand() % SUITS;
 
-      
       // printf("%d %d\n", faces , suits);
 
       printf("%s of %s\n", wFace[faces], wSuit[suits]);
