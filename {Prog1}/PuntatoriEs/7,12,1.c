@@ -42,7 +42,7 @@ int main()
    }
 }
 
-void bubble(int array[], size_t size, int (*compare)(int a, int b))
+void bubble(int array[], size_t size, int (*compare)(int a, int b)) //? (*compare)(int a, int b) indica un puntatore a una funzione che prende in input due parametri e restituisce un intero
 {
    void swap(int *elemento1Ptr, int *elemento2Ptr);
 
