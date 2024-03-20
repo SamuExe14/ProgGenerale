@@ -43,16 +43,41 @@ void deal(unsigned int wDeck[][FACES], const char *wFace[], const char *wSuit[])
    int faces = 0;
    int suits = 0;
 
+   unsigned int counterFaces[FACES] = {0};
+   unsigned int counterSuits[SUITS] = {0};
+
    for (size_t i = 0; i < 5; ++i)
    {
       faces = rand() % FACES;
       suits = rand() % SUITS;
 
+      ++counterFaces[faces];
+      ++counterSuits[suits];
+
       // printf("%d %d\n", faces , suits);
 
-      printf("%s of %s\n", wFace[faces], wSuit[suits]);
+      printf("%s di %s\n", wFace[faces], wSuit[suits]);
+   }
+   puts("");
 
-      
+   for (size_t x = 0; x < FACES; ++x)
+   {
+      if (counterFaces[x] == 2)
+      {
+         printf("Nel mazzo c'è una coppia di %s\n", wFace[x]);
+      }
+   }
+
+   for (size_t y = 0; y < SUITS; y++)
+   {
+      if (counterSuits[y] == 2)
+      {
+         printf("Nel mazzo c'è una coppia di %s\n", wSuit[y]);
+      }
+      else if (counterSuits[y] == 3)
+      {
+         printf("Nel mazzo ci sono tre carte di %s", wSuit[y]);
+      }
    }
 }
 
@@ -63,21 +88,21 @@ int main()
    srand(time(NULL));
    shuffle(deck);
 
-   const char *suit[SUITS] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+   const char *suit[SUITS] = {"Cuori", "Quadri", "Fiori", "Picche"};
 
-   const char *face[FACES] = {"Ace",
-                              "Deuce",
-                              "Three",
-                              "Four",
-                              "Five",
-                              "Six",
-                              "Seven",
-                              "Eight",
-                              "Nine",
-                              "Ten",
-                              "Jack",
-                              "Queen",
-                              "King"};
+   const char *face[FACES] = {"Asso",
+                              "Due",
+                              "Tre",
+                              "Quattro",
+                              "Cinque",
+                              "Sei",
+                              "Sette",
+                              "Otto",
+                              "Nove",
+                              "Dieci",
+                              "J",
+                              "Q",
+                              "K"};
 
    deal(deck, face, suit);
 }
