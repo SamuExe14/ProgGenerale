@@ -68,16 +68,23 @@ void deal(unsigned int wDeck[][FACES], const char *wFace[], const char *wSuit[])
       }
    }
 
-   for (size_t y = 0; y < SUITS; y++)
+   for (size_t y = 0; y < SUITS - 1; y++)
    {
-      if (counterSuits[y] == 2)
+
+      if (counterSuits[y] == 3)
       {
-         printf("Nel mazzo c'è una coppia di %s\n", wSuit[y]);
+         printf("Nel mazzo ci sono tre carte di %s\n", wSuit[y]);
       }
-      else if (counterSuits[y] == 3)
+      else if (counterSuits[y] == 4)
       {
-         printf("Nel mazzo ci sono tre carte di %s", wSuit[y]);
+         printf("Nel mazzo ci sono quattro carte di %s\n", wSuit[y]);
       }
+      else if (counterSuits[y] == 5)
+      {
+         printf("Nel mazzo c'è una scala di %s\n", wSuit[y]);
+      }
+
+      // printf("%u %d ", counterSuits[y], y);
    }
 }
 
