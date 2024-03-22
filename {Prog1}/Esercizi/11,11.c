@@ -2,16 +2,16 @@
 
 struct personData
 {
-     char lastName[15];
-     char firstName[15];
-     char age[4];
+     const char *lastName[15];
+     const char *firstName[15];
+     const int *age[4];
 };
 
 int main()
 {
      FILE *filePtr;
 
-     if ((filePtr = fopen("nameage.dat", "w")) == NULL)
+     if ((filePtr = fopen("nameage.dat", "wb")) == NULL)
      {
           puts("File could not be opened");
      }
