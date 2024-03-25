@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
    ListNodePtr startPtr = NULL; // inzialmente non vi sono nodi
    char item;                   // char inserito dall'utente
-   instructions();              // stampa il menu per l'utente
+   // instructions();              // stampa il menu per l'utente
 
    int choice;
    scanf("%d", &choice);
@@ -89,13 +89,13 @@ void insert(ListNodePtr *sPtr, char value) // inserisce un nuovo nodo nella list
    }
 }
 
-char delete(ListNodePtr *sPtr, char value)
+char delete(ListNode **sPtr, char value)
 
 {
    if (value == (*sPtr)->data) // cancella il primo nodo se viene trovata una corrispondenza
    {
       ListNodePtr tempPtr = *sPtr; // aggancia il nodo da rimuovere
-      sPtr = (*sPtr)->nextPtr;     // sfila il nodo
+      *sPtr = (*sPtr)->nextPtr;     // sfila il nodo
       free(tempPtr);               // libera il nodo
       return value;
    }
@@ -112,7 +112,7 @@ char delete(ListNodePtr *sPtr, char value)
       if (currentPtr != NULL) // cancella il nodo che punta currentPtr
       {
          ListNodePtr tempPtr = *sPtr;
-         sPtr = (*sPtr)->nextPtr;
+         *sPtr = (*sPtr)->nextPtr;
          free(tempPtr);
          return value;
       }
