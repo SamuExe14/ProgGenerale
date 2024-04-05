@@ -116,6 +116,7 @@ char delete(ListNode **sPtr, char value)
          free(tempPtr);
          return value;
       }
+      return -1;
    }
 }
 
