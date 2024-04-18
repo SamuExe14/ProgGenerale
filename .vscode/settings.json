@@ -9,4 +9,7 @@
     ],
     "terminal.explorerKind": "integrated",
     "terminal.integrated.allowChords": false,
+    "files.associations": {
+        "ostream": "cpp"
+    },
 }
