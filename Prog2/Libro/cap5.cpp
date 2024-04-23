@@ -33,10 +33,6 @@ inline void saluta(string ciao)
           cout << ciao << endl;
      }
 }
-
-//? PRINCIPALI LIBRERIE STANDARD DEL C++
-// cctype
-// cmath
 // cstdlib
 // ctime
 
