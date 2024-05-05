@@ -46,7 +46,8 @@ int main()
      cout << setbase(2) << z << endl;
 
      cout.width(10); // usato per impostare la larghezza del campo della prossima istruzione cout
-     cout << "ciao" << "bello" << endl;
+     cout << "ciao"
+          << "bello" << endl;
 
      cout << "ABC";
      cout.width(5);
@@ -60,7 +61,50 @@ int main()
      cout << prova;
 
      ofstream fout("prova", ios::app); // bisogna specificare se in modalità ios::out(output) o ios::app(append)
-     fout << "porcoddio";
+     fout << "myProva";
+
+     ifstream fInput("nomeFile.txt"); // si crea un flusso input a un file
+     if (!fin)
+     {
+          cerr << "Non è stato possibile aprire il file\n";
+          exit(-1);
+     }
+     ofstream fOutput("nomeFile.txt", ios::app); // si crea un flusso output a un file
+
+     //---------------------------------------------------------//
+
+     cout << "Scrivere il nome del file\n";
+     char nomeFile[20];
+     cin >> nomeFile;
+     ifstream inputFile(nomeFile);
+     if (!inputFile)
+     {
+          cerr << "Non è stato possibile aprire il file " << nomeFile;
+          return -1;
+     }
+
+     char car;
+     while (inputFile.get(car))
+     {
+          cout.put(car);
+     }
+     return 0;
+
+     // ifstream crea un flusso in input
+     // ofstream crea un flusso in output
+     // fstream crea un flusso input output
+     //* ios::in -> input
+     //* ios::app -> append
+     //* ios::out -> output
+     //* ios::ate -> aprire e cercare la fine del file
+     //* ios::nocreate -> genera un errore se non esiste il file
+     //* ios::trunc -> tronca il file a 0 se e siste già
+     //* ios::noreplace -> genera un errore se il file esiste
+     //* ios::binary -> il file si apre in modalità binaria
+
+     fstream f;
+     f.open("file_a_caso", ios::in | ios::out | ios::binary); // apre uno stream I/O in modalità binaria
+     f.close(); // per chiudere lo stream verso il file
 
      
 }

@@ -114,10 +114,10 @@ class TorneoNazionale : public Torneo
             SquadraNazionale *nz = dynamic_cast<SquadraNazionale *>(lista[i]);
             if (nz != nullptr)
             {
-               if (nz->getNazionalità() == nazion->getNazionalità())
-               {
-                  return false;
-               }
+               // if (nz->getNazionalità() == nazion->getNazionalità())
+               // {
+               //    return false;
+               // }
             }
          }
          return Torneo::addSquadra(squadra);
@@ -131,9 +131,13 @@ int main()
    Squadra *juve = new Squadra("Juventus", 1897);
    Squadra *catania = new Squadra("Catania", 1946);
    SquadraNazionale *italia = new SquadraNazionale("Italia", 1899, "Italiana");
+   Squadra *inter = new Squadra("Inter", 1908);
    TorneoClub *serieA = new TorneoClub(10);
 
    cout << "Add squadra " << serieA->addSquadra(juve) << endl;
    cout << "Add squadra " << serieA->addSquadra(catania) << endl;
-   cout << "Add squadra " << serieA->addSquadra() cout << "Add squadra " << cout << "Add squadra " << cout << "Add squadra " <<
+   cout << "Add squadra " << serieA->addSquadra(inter) << endl;
+   cout << "Add squadra " << endl; 
+   cout << "Add squadra " << endl; 
+   cout << "Add squadra " << endl;
 }
