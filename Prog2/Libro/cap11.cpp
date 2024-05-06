@@ -62,6 +62,7 @@ public:
      void diminuisce_frequenza();
      void aumenta_volume();
      void diminuisce_volume();
+     inline void funzione_casuale();
 };
 
 void Radio::accende() //! è possibile definire una funzione dichiarata altrove con l'operatore ::
@@ -90,6 +91,46 @@ void Radio::diminuisce_volume()
      volume--;
 }
 
+inline void Radio::funzione_casuale(){
+    //* è possibile creare una funzione inline richiamandola nella definizione
+};
+
+class Rettangolo //? COSTRUTTORI
+{
+private:
+     int Sinistro;
+     int Superiore;
+     int Destro;
+     int Inferiore;
+
+public:
+     Rettangolo(int Sin, int Sup, int Des, int Inf); // costruttore
+};
+
+class Punto
+{
+public:
+     Punto();
+     Punto(int x, int y)
+     {
+          x = 0;
+          y = 0;
+     }
+
+private:
+     int x;
+     int y;
+};
+
+class newDemo
+{
+private:
+     int dati;
+public:
+     newDemo() {dati = 0;} //* costruttore
+     ~newDemo(){} //* distruttore  
+};
+
 int main()
 {
      Studente studente1; //* definizione di un'istanza della classe Studente
@@ -99,4 +140,10 @@ int main()
 
      Radio myRadio;
      myRadio.accende();
+
+     Rettangolo rect(25, 75, 25, 75);
+     Rettangolo *Prect = new Rettangolo(25, 75, 25, 75);
+
+     Punto Q();
+     Punto P(50, 250);
 }
