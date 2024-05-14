@@ -91,8 +91,8 @@ void Radio::diminuisce_volume()
      volume--;
 }
 
-inline void Radio::funzione_casuale(){
-    //* è possibile creare una funzione inline richiamandola nella definizione
+inline void Radio::funzione_casuale() {
+     //* è possibile creare una funzione inline richiamandola nella definizione
 };
 
 class Rettangolo //? COSTRUTTORI
@@ -126,9 +126,50 @@ class newDemo
 {
 private:
      int dati;
+
 public:
-     newDemo() {dati = 0;} //* costruttore
-     ~newDemo(){} //* distruttore  
+     newDemo() { dati = 0; } //* costruttore
+     ~newDemo()
+     {
+          cout << "Il distruttore è stato invocato" << endl;
+     } //* distruttore
+};
+
+//? CLASSI COMPOSTE
+class Dossier
+{
+     // attributi
+};
+class Indirizzo
+{
+     // attributi
+};
+class Persona
+{
+public:
+     Persona()
+     {
+          DareId(0);
+          DareEtà(0.0);
+     }
+     void DareId(long);
+     void DareEtà(float);
+
+private:
+     long id;
+     Dossier dos;   // le classi membro devono essere definite prima della classe composta
+     Indirizzo ind; //* nonostante Persona contenga un membro Indirizzo o Dossier, Persona non ha accesso agli elementi privati di Dossier o Indirizzo
+     float votoMedio;
+};
+
+//? OVERLOADING DI FUNZIONI MEMBRO
+class Prodotto
+{
+public: //* nonostante i nomi delle funzioni siano diverse, ogni funzione prodotto() svolge un compito diverso
+     int prodotto(int m, int n);
+     int prodotto(int m, int p, int q);
+     int prodotto(float m, float n);
+     int prodotto(float m, float n, float p);
 };
 
 int main()
