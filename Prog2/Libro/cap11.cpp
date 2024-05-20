@@ -127,10 +127,9 @@ class newDemo
 {
 private:
      int dati;
-
 public:
-     newDemo() { dati = 0; } //* costruttore
-     ~newDemo() {}           //* distruttore
+     newDemo() {dati = 0;} //* costruttore
+     ~newDemo(){} //* distruttore  
 };
 
 int main()
