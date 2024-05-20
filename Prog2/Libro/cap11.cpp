@@ -17,8 +17,6 @@ public:
 
 class Semaforo
 {
-public:
-     void Semaforo::mostrare_colore(colore c); // nel caso in cui la definizione di un metodo fosse fatto altrove
      // deve contenere il riferimento alla classe alla quale appartengono mediante l'operatore di risoluzione di visibilità ::
 
 private:
@@ -29,6 +27,9 @@ private:
           ROSSO
      };
      void cambiareColore(colore);
+
+public:
+     void mostrare_colore(colore); // nel caso in cui la definizione di un metodo fosse fatto altrove
 };
 
 class Studente
@@ -91,8 +92,8 @@ void Radio::diminuisce_volume()
      volume--;
 }
 
-inline void Radio::funzione_casuale(){
-    //* è possibile creare una funzione inline richiamandola nella definizione
+inline void Radio::funzione_casuale() {
+     //* è possibile creare una funzione inline richiamandola nella definizione
 };
 
 class Rettangolo //? COSTRUTTORI
@@ -126,9 +127,10 @@ class newDemo
 {
 private:
      int dati;
+
 public:
-     newDemo() {dati = 0;} //* costruttore
-     ~newDemo(){} //* distruttore  
+     newDemo() { dati = 0; } //* costruttore
+     ~newDemo() {}           //* distruttore
 };
 
 int main()
