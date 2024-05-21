@@ -113,6 +113,24 @@ float Punto3D::modulo()
      return sqrt(r);
 }
 
+//!  CARATTERISTICHE DELL'EREDITARIETÀ MULTIPLA
+
+class Rubinetto
+{
+public:
+     void aprire(); // --------------|
+}; //|
+   //|
+class Finestra      //|-//! avendo entrambe le classi il metodo aprire(), si può generare ambiguità
+{                   //|
+public:             //|
+     void aprire(); // --------------|
+};
+
+class FinRub : public Finestra, public Rubinetto
+{
+};
+
 int main()
 {
      Libro libro;
@@ -122,5 +140,11 @@ int main()
 
      Punto3D p(10, 20, 30);
      cout << p.modulo();
+
+     FinRub f;
+
+     f.Rubinetto::aprire(); //? Si può risolvere l'ambiguità con l'operatore di risoluzione di visibilità
+     f.Finestra::aprire();
+
      return 0;
 }
