@@ -14,7 +14,7 @@ public:
 int Random::randomizza()
 {
      srand(time(NULL));
-     num = rand() % 200;
+     num = rand() % 1000;
      return num;
 }
 
