@@ -129,6 +129,50 @@ public:             //|
 
 class FinRub : public Finestra, public Rubinetto
 {
+public: // è meglio risolvere le ambiguità dandogli dei nomi comprensibili
+     void f_aprire() { Finestra::aprire(); }
+     void r_aprire() { Rubinetto::aprire(); }
+};
+
+//! AMBIGUITÀ TRA ATTRIBUTI CON CLASSI DERIVATE
+class Lavoratore
+{
+public:
+     const int num_ss;
+     char *nome;
+};
+
+class Studente
+{
+public:
+     char *nome;
+};
+
+class Stu_Lavoratore : public Lavoratore, public Studente
+{
+public:
+     void stampare()
+     {
+          cout << "Numero ss: " << num_ss << endl;
+          // cout << "Nome: " << nome; --> ERRORE DI AMBIGUITÀ
+          cout << "Nome" << Studente::nome << endl;
+     }
+};
+
+//! Precedenza
+
+class Padre
+{
+public:
+     void f(int);
+     void f(char);
+     void f(const string &);
+};
+
+class Figlio: public Padre
+{
+public:
+     void f(const string &);
 };
 
 int main()
@@ -143,8 +187,14 @@ int main()
 
      FinRub f;
 
+     //! f.aprire(); produrrebbe un errore
      f.Rubinetto::aprire(); //? Si può risolvere l'ambiguità con l'operatore di risoluzione di visibilità
      f.Finestra::aprire();
+
+     Figlio ogg;
+     // ogg.f(5); ERRORE: Padre::f(int) è occultata
+     // ogg.f('x'); ERRORE: Padre::f(char) è occultata
+     ogg.f("hello"); // corretto
 
      return 0;
 }
