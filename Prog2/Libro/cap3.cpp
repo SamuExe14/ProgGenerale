@@ -22,10 +22,22 @@ int main()
      // cout << "La temperatura in Fahrenheit è di " << fahrenheit << endl;
 
      // esercizio 3.8
-     cout << "Inserire l'ora in notazione di 24 ore" << endl;
-     float ora;
+     cout << "Inserire l'ora in notazione di 24 ore: ";
+     int ora;
      cin >> ora;
+     int minuti;
+     cout << "Inserire minuti ";
+     cin >> minuti;
 
-     ora -= 12;
-     cout << "Sono le " << ora << endl;
+     if (ora >= 12)
+     {
+          ora -= 12;
+     }
+
+     if (minuti < 0 || minuti > 60)
+     {
+          cerr << "Il formato non è valido, riprovare" << endl;
+          exit(-1);
+     }
+     cout << "Sono le " << ora << ":" << minuti << endl;
 }

@@ -9,6 +9,9 @@ int main(){
      Colori mioColore = Blu; // definisco una variabile con il tipo definito con enum
 
      enum Semaforo {Verde, Giallo = 10, Rosso};
+     
+     enum Bandiera {Italia, Spagna, Francia, Inghilterra};
+     Bandiera verde = Italia;
 
      // Esercizio 2.3
 
@@ -17,4 +20,5 @@ int main(){
      // Esercizio 2.4
      cout << '\n' <<"Benvenuti in C++" << '\n' << "Cominceremo presto a programmare" << endl;
      
+
 }

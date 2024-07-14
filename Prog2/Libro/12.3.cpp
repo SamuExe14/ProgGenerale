@@ -49,7 +49,6 @@ private:
      float x1, y1;
 };
 
-
 int main()
 {
      Cerchio C(2, 2.5, 2);
