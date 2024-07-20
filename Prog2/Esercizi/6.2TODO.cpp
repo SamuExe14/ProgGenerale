@@ -38,5 +38,7 @@ int main()
      {
           cin >> temp[i].temperatura;
      }
+
+     // TODO da completare con file
      ricerca(temp);
 }
